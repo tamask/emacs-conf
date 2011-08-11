@@ -1,0 +1,13 @@
+(setq my-font-family "Menlo")
+
+(setq my-font-height 135)
+(setq my-frame-width 140)
+(setq my-frame-height 40)
+(setq my-frame-top 40)
+(setq my-frame-left 70)
+
+(load "~/.emacs-conf/base.el")
+(load "~/.emacs-conf/display.dark.el")
+(load "~/.emacs-conf/functions.el")
+(load "~/.emacs-conf/shortcuts.el")
+(load "~/.emacs-conf/mac.el")
