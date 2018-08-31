@@ -17,6 +17,9 @@
 ;;       (normal-top-level-add-subdirs-to-load-path)))
 
 
+;; (tool-bar-mode -1)
+;; (menu-bar-mode -1)
+
 ;; default major mode
 (setq default-major-mode 'text-mode)
 
