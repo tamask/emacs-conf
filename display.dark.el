@@ -56,7 +56,7 @@
    'border t :background "grey")
 
   (set-face-attribute
-   'vertical-border t :foreground "#555555")
+   'vertical-border t :foreground "#191919")
 
   (set-face-attribute
    'fringe t :background my-bgcolor :foreground "#777777")
@@ -83,7 +83,7 @@
    'tooltip t :background my-bgcolor :foreground my-fgcolor)
 
   (set-face-attribute
-   'region t :background "#403a30")
+   'region t :background "#364b4f")
 
   (set-face-attribute
    'header-line t :background my-bgcolor :foreground "grey")
@@ -107,7 +107,7 @@
    :box '(:line-width 1 :color "#454545"))
 
   (set-face-attribute
-   'mode-line-highlight nil)
+   'mode-line-highlight t :box nil :background "#48666f")
 
   (set-face-attribute
    'mode-line-inactive t :background "#444444" :foreground my-bgcolor
