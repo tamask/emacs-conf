@@ -1,0 +1,5 @@
+(setq default-directory "~")
+
+(load "~/emacs-conf/base.el")
+(load "~/emacs-conf/functions.el")
+(load "~/emacs-conf/shortcuts.el")
