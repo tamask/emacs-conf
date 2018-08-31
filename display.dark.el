@@ -29,10 +29,10 @@
   (set-scroll-bar-mode nil)
 
   ;; hide toolbar
-  (tool-bar-mode nil)
+  (tool-bar-mode -1)
 
   ;; hide menubar
-  (menu-bar-mode nil)
+  (menu-bar-mode -1)
 
   ;; colors
 

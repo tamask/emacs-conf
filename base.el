@@ -17,8 +17,8 @@
 ;;       (normal-top-level-add-subdirs-to-load-path)))
 
 
-;; (tool-bar-mode -1)
-;; (menu-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; default major mode
 (setq default-major-mode 'text-mode)
@@ -108,3 +108,23 @@
 (require 'dired-x)
 (setq-default dired-omit-files-p t) ; this is buffer-local variable
 (setq dired-omit-files (concat dired-omit-files "\\|\\.meta$"))
+
+;; stop on subwords
+(define-globalized-minor-mode global-subword-mode subword-mode
+  (lambda () (subword-mode 1)))
+(global-subword-mode 1)
+
+;; disable electric indent
+(electric-indent-mode 0)
+
+;; don't require trailing newlines
+(setq mode-require-final-newline nil)
+(setq require-final-newline nil)
+
+;; global code styling
+(setq c-default-style "gnu")
+(setq default-tab-width 2)
+(setq js-indent-level 2)
+
+;; stop annoying autosave
+(setq auto-save-default nil)

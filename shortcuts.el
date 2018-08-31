@@ -26,3 +26,7 @@
 
 ;; sort lines
 (global-set-key (kbd "C-c C-s") 'sort-lines)
+
+;; old emacs newline keybindings
+(define-key global-map (kbd "C-j") 'newline-and-indent)
+(define-key global-map (kbd "RET") 'newline)

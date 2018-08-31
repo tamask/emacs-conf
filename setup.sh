@@ -34,9 +34,9 @@ if [ "$1" = "lisp" ]; then
     cd "$BASEPATH/$SITELISP_DIR"
 
     mv csharp-mode.el csharp-mode.el.backup
-    wget https://github.com/josteink/csharp-mode/blob/master/csharp-mode.el
+    wget https://raw.githubusercontent.com/josteink/csharp-mode/master/csharp-mode.el
     mv shader-mode.el shader-mode.el.backup
-    wget https://github.com/midnightSuyama/shader-mode/blob/master/shader-mode.el
+    wget https://raw.githubusercontent.com/midnightSuyama/shader-mode/master/shader-mode.el
     mv visual-fill-column.el visual-fill-column.el.backup
     wget https://raw.githubusercontent.com/joostkremers/visual-fill-column/master/visual-fill-column.el
 fi

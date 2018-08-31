@@ -29,3 +29,14 @@
             (if show-trailing-whitespace "enabled" "disabled"))))
 
 (global-set-key "\C-ce" 'toggle-trailing-whitespace-display)
+
+;; Replace all whitespace in the region with single spaces
+(defun collapse-whitespace (beg end)
+  "replace all whitespace in the region with single spaces"
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (re-search-forward "\\s-+" nil t)
+        (replace-match " ")))))
