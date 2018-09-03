@@ -40,3 +40,16 @@
       (goto-char (point-min))
       (while (re-search-forward "\\s-+" nil t)
         (replace-match " ")))))
+
+;; visual wrap/unwrap
+(defun toggle-visual-wrap ()
+  (interactive)
+  (if (bound-and-true-p visual-line-mode)
+      (progn
+        (visual-line-mode -1)
+        (visual-fill-column-mode -1))
+    (progn
+      (visual-line-mode)
+      (visual-fill-column-mode))))
+
+(global-set-key "\C-cw" 'toggle-visual-wrap)
