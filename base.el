@@ -128,3 +128,7 @@
 
 ;; stop annoying autosave
 (setq auto-save-default nil)
+
+;; grep setup
+(grep-compute-defaults)
+(setq auto-save-default nil)
