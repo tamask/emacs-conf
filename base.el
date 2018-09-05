@@ -132,3 +132,6 @@
 ;; grep setup
 (grep-compute-defaults)
 (setq auto-save-default nil)
+
+;; css
+(setq css-fontify-colors nil)
