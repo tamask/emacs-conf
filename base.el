@@ -135,3 +135,6 @@
 
 ;; css
 (setq css-fontify-colors nil)
+
+;; quick yes-no
+(fset 'yes-or-no-p 'y-or-n-p)
