@@ -33,3 +33,15 @@
 
 ;; occur
 (global-set-key (kbd "C-c o") 'occur)
+
+;; reuse dired buffer
+(put 'dired-find-alternate-file 'disabled nil)
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+   (define-key dired-mode-map (kbd "^")
+     (lambda () (interactive) (find-alternate-file "..")))
+   (define-key dired-mode-map (kbd "M-p")
+     (lambda () (interactive) (find-alternate-file "..")))
+   (define-key dired-mode-map (kbd "RET") `dired-find-alternate-file)
+   ))
