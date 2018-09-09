@@ -104,6 +104,9 @@
 ;; initial scratch message
 (setq initial-scratch-message "")
 
+;; dired formatting (humanized dates, no owner)
+(setq dired-listing-switches "-halG")
+
 ;; hide some files in dired
 (require 'dired-x)
 (setq-default dired-omit-files-p t) ; this is buffer-local variable

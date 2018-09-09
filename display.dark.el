@@ -195,7 +195,7 @@
      ((t (:foreground unspecified))))
 
    `(erc-input-face
-     ((t (:foreground "#fff9bc"))))
+     ((t (:foreground ,my-fgcolor))))
 
    ;; gnus
 
