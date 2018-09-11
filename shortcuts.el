@@ -63,3 +63,8 @@
 
 (global-set-key '[(f1)] 'call-last-kbd-macro)
 (global-set-key '[(shift f1)] 'toggle-kbd-macro-recording-on)
+
+;; tags
+
+(global-set-key (kbd "C-c C-f") 'find-tag)
+(global-set-key (kbd "C-c C-t") 'visit-tags-table)
