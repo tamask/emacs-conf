@@ -53,3 +53,12 @@
       (visual-fill-column-mode))))
 
 (global-set-key "\C-cw" 'toggle-visual-wrap)
+
+;; undo fill paragraph
+(defun undo-fill-paragraph ()
+  "fill individual paragraphs with large fill column"
+  (interactive)
+  (let ((fill-column most-positive-fixnum))
+    (fill-individual-paragraphs (point-min) (point-max))))
+
+(global-set-key "\M-Q" 'undo-fill-paragraph)
