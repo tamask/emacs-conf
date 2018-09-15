@@ -68,3 +68,4 @@
 
 (global-set-key (kbd "C-c C-f") 'find-tag)
 (global-set-key (kbd "C-c C-t") 'visit-tags-table)
+(global-set-key (kbd "M-'") 'xref-find-definitions-other-window)
