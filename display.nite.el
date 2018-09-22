@@ -152,10 +152,10 @@
    'font-lock-string-face t :foreground "lightsalmon")
 
   (set-face-attribute
-   'font-lock-builtin-face t :foreground "lightblue" :weight 'normal)
+   'font-lock-builtin-face t :foreground "aquamarine" :weight 'normal)
 
   (set-face-attribute
-   'font-lock-constant-face t :foreground "lightblue" :weight 'normal)
+   'font-lock-constant-face t :foreground "aquamarine" :weight 'normal)
 
   (set-face-attribute
    'font-lock-function-name-face t :foreground "khaki")
@@ -442,5 +442,5 @@
    )
 
   ;; (setq mode-line-front-space " ")
-  ;; (setq-default mode-line-format (cons (propertize "\u200b" 'display '((raise -0.2) (height 1.4))) mode-line-format))
+  ;; (setq-default mode-line-format (cons (propertize "\u200b" 'display '((raise -0.1) (height 1.2))) mode-line-format))
 )
