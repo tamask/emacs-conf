@@ -34,12 +34,11 @@
   ;; hide menubar
   (menu-bar-mode -1)
 
-  ;; colors
+  ;; core colors
 
-  ;; (setq my-fgcolor "#fff9bc")
-  ;; (setq my-fgcolor "#f0f0dc")
   (setq my-fgcolor "beige")
   (setq my-bgcolor "#222222")
+  (setq my-hilite "#364b4f")
 
   ;; basic
 
@@ -70,7 +69,10 @@
    'highlight t :background "aquamarine" :foreground "black")
 
   (set-face-attribute
-   'match t :background "#444444" :foreground "aquamarine")
+   'match t :background my-hilite :foreground "aquamarine")
+
+  (set-face-attribute
+   'lazy-highlight t :background my-hilite)
 
   (set-face-attribute
    'shadow t :foreground "grey40")
@@ -85,16 +87,13 @@
    'tooltip t :background my-bgcolor :foreground my-fgcolor)
 
   (set-face-attribute
-   'region t :background "#364b4f")
+   'region t :background my-hilite)
 
   (set-face-attribute
    'header-line t :background my-bgcolor :foreground "grey")
 
   (set-face-attribute
    'isearch t :background "palevioletred1" :foreground "brown4")
-
-  (set-face-attribute
-   'lazy-highlight t :background "#403a30")
 
   (set-face-attribute
    'link t :foreground "aquamarine")
@@ -126,6 +125,20 @@
 
   (set-face-attribute
    'compilation-mode-line-fail t :foreground "lightsalmon" :weight 'normal)
+
+  (set-face-attribute
+   'compilation-warning t :foreground "khaki" :weight 'normal)
+
+  (set-face-attribute
+   'compilation-info t :foreground "khaki" :weight 'normal)
+
+  ;; dired
+
+  (set-face-attribute
+   'dired-header t :foreground "aquamarine")
+
+  (set-face-attribute
+   'dired-directory t :foreground "tan")
 
   ;; minibuffer
 
