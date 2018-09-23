@@ -70,7 +70,7 @@
    'highlight t :background "aquamarine" :foreground "black")
 
   (set-face-attribute
-   'match t :background "#444444" :foreground "cyan")
+   'match t :background "#444444" :foreground "aquamarine")
 
   (set-face-attribute
    'shadow t :foreground "grey40")
@@ -97,7 +97,7 @@
    'lazy-highlight t :background "#403a30")
 
   (set-face-attribute
-   'link t :foreground "cyan")
+   'link t :foreground "aquamarine")
 
   (set-face-attribute
    'link-visited t :foreground "lightsalmon")
@@ -130,7 +130,7 @@
   ;; minibuffer
 
   (set-face-attribute
-   'minibuffer-prompt t :foreground "cyan")
+   'minibuffer-prompt t :foreground "aquamarine")
 
   ;; basic text
 
@@ -138,12 +138,12 @@
    'trailing-whitespace t :background "#675e46")
 
   (set-face-attribute
-   'escape-glyph t :foreground "cyan")
+   'escape-glyph t :foreground "aquamarine")
 
   ;; font-lock
 
   (set-face-attribute
-   'font-lock-type-face t :foreground "aquamarine")
+   'font-lock-type-face t :foreground "wheat")
 
   (set-face-attribute
    'font-lock-comment-face t :foreground "chocolate1")
@@ -155,22 +155,22 @@
    'font-lock-builtin-face t :foreground "aquamarine" :weight 'normal)
 
   (set-face-attribute
-   'font-lock-constant-face t :foreground "aquamarine" :weight 'normal)
+   'font-lock-constant-face t :foreground my-fgcolor :weight 'normal)
 
   (set-face-attribute
-   'font-lock-function-name-face t :foreground "khaki")
+   'font-lock-function-name-face t :foreground "wheat")
 
   (set-face-attribute
-   'font-lock-keyword-face t :foreground "cyan")
+   'font-lock-keyword-face t :foreground "aquamarine")
 
   (set-face-attribute
-   'font-lock-variable-name-face t :foreground "aquamarine")
+   'font-lock-variable-name-face t :foreground my-fgcolor)
 
   ;; (set-face-attribute
   ;;  'font-lock-variable-name-face t :foreground nil :inherit nil)
 
   (set-face-attribute
-   'font-lock-preprocessor-face t :foreground "cyan" :inherit nil)
+   'font-lock-preprocessor-face t :foreground "aquamarine" :inherit nil)
 
   (set-face-attribute
    'font-lock-warning-face t :foreground "khaki" :weight 'normal)
@@ -185,7 +185,7 @@
 
   (custom-set-faces
    `(erc-prompt-face
-     ((t (:background unspecified :foreground "cyan" :weight normal))))
+     ((t (:background unspecified :foreground "aquamarine" :weight normal))))
 
    `(erc-notice-face
      ((t (:foreground "chocolate1" :weight normal))))
@@ -265,7 +265,7 @@
      ((t (:foreground "khaki"))))
 
    `(gnus-summary-selected
-     ((t (:underline unspecified :foreground "cyan"))))
+     ((t (:underline unspecified :foreground "aquamarine"))))
 
    ;; mail message
 
@@ -321,25 +321,25 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground "cyan"))))
+     ((t (:weight normal :foreground "aquamarine"))))
 
    `(markdown-header-face-1
-     ((t (:height 260 :foreground "cyan"))))
+     ((t (:height 260 :foreground "aquamarine"))))
 
    `(markdown-header-face-2
-     ((t (:height 220 :foreground "cyan"))))
+     ((t (:height 220 :foreground "aquamarine"))))
 
    `(markdown-header-face-3
-     ((t (:height 180 :foreground "cyan"))))
+     ((t (:height 180 :foreground "aquamarine"))))
 
    `(markdown-header-face-4
-     ((t (:height 140 :foreground "cyan"))))
+     ((t (:height 140 :foreground "aquamarine"))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground "cyan"))))
+     ((t (:underline t :foreground "aquamarine"))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground "cyan"))))
+     ((t (:slant italic :foreground "aquamarine"))))
 
    `(markdown-bold-face
      ((t (:foreground ,my-fgcolor))))
@@ -354,7 +354,7 @@
      ((t (:foreground "lightsalmon"))))
 
    `(markdown-url-face
-     ((t (:foreground "cyan"))))
+     ((t (:foreground "aquamarine"))))
 
    `(markdown-link-face
      ((t (:foreground "aquamarine"))))
