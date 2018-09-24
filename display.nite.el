@@ -54,6 +54,9 @@
    'fixed-pitch t :family my-font-family)
 
   (set-face-attribute
+   'fixed-pitch-serif t :family my-font-family)
+
+  (set-face-attribute
    'border t :background "grey")
 
   (set-face-attribute
@@ -72,16 +75,16 @@
    'match t :background my-hilite :foreground "aquamarine")
 
   (set-face-attribute
-   'lazy-highlight t :background my-hilite)
+   'lazy-highlight t :background "skyblue4")
 
   (set-face-attribute
    'shadow t :foreground "grey40")
 
   (set-face-attribute
-   'show-paren-match t :background "aquamarine" :foreground "black")
+   'show-paren-match t :background "palevioletred1" :foreground "brown4")
 
   (set-face-attribute
-   'show-paren-mismatch t :background "red" :foreground "black")
+   'show-paren-mismatch t :background "chocolate1" :foreground my-bgcolor)
 
   (set-face-attribute
    'tooltip t :background my-bgcolor :foreground my-fgcolor)
@@ -101,16 +104,19 @@
   (set-face-attribute
    'link-visited t :foreground "lightsalmon")
 
+  (set-face-attribute
+   'success t :foreground "palegreen")
+
   ;; modeline
 
   (set-face-attribute
-   'mode-line t :box nil :background "#444444" :foreground my-fgcolor)
+   'mode-line t :box nil :background "#344950" :foreground my-fgcolor)
 
   (set-face-attribute
    'mode-line-highlight t :box nil :background "#48666f")
 
   (set-face-attribute
-   'mode-line-inactive t :box nil :background "#444444" :foreground "#888888")
+   'mode-line-inactive t :box nil :background "#344950" :foreground "#78949b")
 
   (set-face-attribute
    'mode-line-highlight nil)
@@ -153,6 +159,9 @@
   (set-face-attribute
    'escape-glyph t :foreground "aquamarine")
 
+  (set-face-attribute
+   'glyphless-char t :height my-font-height)
+
   ;; font-lock
 
   (set-face-attribute
@@ -178,9 +187,6 @@
 
   (set-face-attribute
    'font-lock-variable-name-face t :foreground my-fgcolor)
-
-  ;; (set-face-attribute
-  ;;  'font-lock-variable-name-face t :foreground nil :inherit nil)
 
   (set-face-attribute
    'font-lock-preprocessor-face t :foreground "aquamarine" :inherit nil)
@@ -312,24 +318,27 @@
    ;; info reader
 
    `(info-title-1
-     ((t (:weight normal :height 280))))
+     ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-title-2
-     ((t (:weight normal :height 240))))
+     ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-title-3
-     ((t (:weight normal :height 200))))
+     ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-node
      ((t (:weight normal :slant normal :foreground "aquamarine"))))
 
+   `(info-menu-header
+     ((t (:inherit unspecified :weight bold))))
+
    `(info-menu-star
-     ((t (:foreground "tomato"))))
+     ((t (:foreground unspecified))))
 
    ;; compilation
 
    `(compilation-info
-     ((t (:foreground "khaki" :weight normal ))))
+     ((t (:foreground "khaki" :weight normal))))
 
    ;; markdown
 
@@ -337,16 +346,16 @@
      ((t (:weight normal :foreground "aquamarine"))))
 
    `(markdown-header-face-1
-     ((t (:height 260 :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "aquamarine"))))
 
    `(markdown-header-face-2
-     ((t (:height 220 :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "aquamarine"))))
 
    `(markdown-header-face-3
-     ((t (:height 180 :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "aquamarine"))))
 
    `(markdown-header-face-4
-     ((t (:height 140 :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "aquamarine"))))
 
    `(markdown-header-face-5
      ((t (:underline t :foreground "aquamarine"))))
@@ -452,6 +461,34 @@
 
    `(rst-level-6-face
      ((t (:background unspecified))))
+
+   ;; customize
+
+   `(custom-button
+     ((t (:box nil :background "#444444" :foreground "beige"))))
+
+   `(custom-button-mouse
+     ((t (:box nil :background "skyblue4" :foreground "beige"))))
+
+   `(custom-button-pressed
+     ((t (:box nil :background "palevioletred1" :foreground "brown4"))))
+
+   `(custom-group-tag
+     ((t (:height unspecified))))
+
+   `(custom-group-tag-1
+     ((t (:height unspecified))))
+
+   `(custom-visibility
+     ((t (:height unspecified))))
+
+   ;; widget
+
+   `(widget-field
+     ((t (:box nil :background "#444444"))))
+
+   `(widget-single-line-field
+     ((t (:box nil :background "#444444"))))
    )
 
   ;; (setq mode-line-front-space " ")
