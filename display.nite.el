@@ -17,6 +17,11 @@
         ((width . ,my-frame-width)
          (height . ,my-frame-height)))
 
+  ;; ansi term
+  (setq ansi-term-color-vector
+        [nil "#000000" "#ffa965" "#42ffb6" "#fff485"
+             "#93Ceff" "#ffa3CC" "#aeffff"])
+
   ;; You can specify geometry-related options for the initial frame,
   ;; however they won't take effect until Emacs reads `.emacs', which
   ;; happens after first creating the frame. Therefore, set the selected
@@ -40,280 +45,160 @@
   (setq my-bgcolor "#222222")
   (setq my-hilite "#364b4f")
 
-  ;; basic
-
-  (set-face-attribute
-   'default t
-   :family my-font-family :height my-font-height
-   :background my-bgcolor :foreground my-fgcolor)
-
-  (set-face-attribute
-   'variable-pitch t :family my-font-family)
-
-  (set-face-attribute
-   'fixed-pitch t :family my-font-family)
-
-  (set-face-attribute
-   'fixed-pitch-serif t :family my-font-family)
-
-  (set-face-attribute
-   'border t :background "grey")
-
-  (set-face-attribute
-   'vertical-border t :foreground "#191919")
-
-  (set-face-attribute
-   'fringe t :background my-bgcolor :foreground "#777777")
-
-  (set-face-attribute
-   'cursor t :background my-fgcolor :foreground "black")
-
-  (set-face-attribute
-   'highlight t :background "aquamarine" :foreground "black")
-
-  (set-face-attribute
-   'match t :background my-hilite :foreground "aquamarine")
-
-  (set-face-attribute
-   'lazy-highlight t :background "skyblue4")
-
-  (set-face-attribute
-   'shadow t :foreground "grey40")
-
-  (set-face-attribute
-   'show-paren-match t :background "palevioletred1" :foreground "brown4")
-
-  (set-face-attribute
-   'show-paren-mismatch t :background "chocolate1" :foreground my-bgcolor)
-
-  (set-face-attribute
-   'tooltip t :background my-bgcolor :foreground my-fgcolor)
-
-  (set-face-attribute
-   'region t :background my-hilite)
-
-  (set-face-attribute
-   'header-line t :background my-bgcolor :foreground "grey")
-
-  (set-face-attribute
-   'isearch t :background "palevioletred1" :foreground "brown4")
-
-  (set-face-attribute
-   'link t :foreground "aquamarine")
-
-  (set-face-attribute
-   'link-visited t :foreground "lightsalmon")
-
-  (set-face-attribute
-   'success t :foreground "palegreen")
-
-  ;; modeline
-
-  (set-face-attribute
-   'mode-line t :box nil :background "#344950" :foreground my-fgcolor)
-
-  (set-face-attribute
-   'mode-line-highlight t :box nil :background "#48666f")
-
-  (set-face-attribute
-   'mode-line-inactive t :box nil :background "#344950" :foreground "#78949b")
-
-  (set-face-attribute
-   'mode-line-highlight nil)
-
-  ;; compilation
-
-  (set-face-attribute
-   'compilation-mode-line-exit t :foreground "aquamarine" :weight 'normal)
-
-  (set-face-attribute
-   'compilation-mode-line-run t :foreground "khaki" :weight 'normal)
-
-  (set-face-attribute
-   'compilation-mode-line-fail t :foreground "lightsalmon" :weight 'normal)
-
-  (set-face-attribute
-   'compilation-warning t :foreground "khaki" :weight 'normal)
-
-  (set-face-attribute
-   'compilation-info t :foreground "khaki" :weight 'normal)
-
-  ;; dired
-
-  (set-face-attribute
-   'dired-header t :foreground "aquamarine")
-
-  (set-face-attribute
-   'dired-directory t :foreground "tan")
-
-  ;; minibuffer
-
-  (set-face-attribute
-   'minibuffer-prompt t :foreground "aquamarine")
-
-  ;; basic text
-
-  (set-face-attribute
-   'trailing-whitespace t :background "#675e46")
-
-  (set-face-attribute
-   'escape-glyph t :foreground "aquamarine")
-
-  (set-face-attribute
-   'glyphless-char t :height my-font-height)
-
-  ;; font-lock
-
-  (set-face-attribute
-   'font-lock-type-face t :foreground "wheat")
-
-  (set-face-attribute
-   'font-lock-comment-face t :foreground "chocolate1")
-
-  (set-face-attribute
-   'font-lock-string-face t :foreground "lightsalmon")
-
-  (set-face-attribute
-   'font-lock-builtin-face t :foreground "aquamarine" :weight 'normal)
-
-  (set-face-attribute
-   'font-lock-constant-face t :foreground my-fgcolor :weight 'normal)
-
-  (set-face-attribute
-   'font-lock-function-name-face t :foreground "wheat")
-
-  (set-face-attribute
-   'font-lock-keyword-face t :foreground "aquamarine")
-
-  (set-face-attribute
-   'font-lock-variable-name-face t :foreground my-fgcolor)
-
-  (set-face-attribute
-   'font-lock-preprocessor-face t :foreground "aquamarine" :inherit nil)
-
-  (set-face-attribute
-   'font-lock-warning-face t :foreground "khaki" :weight 'normal)
-
-  ;; ansi term
-
-  (setq ansi-term-color-vector
-        [nil "#000000" "#ffa965" "#42ffb6" "#fff485"
-             "#93Ceff" "#ffa3CC" "#aeffff"])
-
-  ;; using customize for lazy-loaded modes
-
   (custom-set-faces
-   `(erc-prompt-face
-     ((t (:background unspecified :foreground "aquamarine" :weight normal))))
+   ;; basic
 
-   `(erc-notice-face
-     ((t (:foreground "chocolate1" :weight normal))))
+   `(default
+     ((t (:family ,my-font-family :height ,my-font-height :background ,my-bgcolor :foreground ,my-fgcolor))))
 
-   `(erc-direct-msg-face
-     ((t (:foreground "white" :weight normal :slant italic))))
+   `(variable-pitch
+     ((t (:family ,my-font-family))))
 
-   `(erc-error-face
-     ((t (:foreground "#aa0000" :weight normal))))
+   `(fixed-pitch
+     ((t (:family ,my-font-family))))
 
-   `(erc-timestamp-face
-     ((t (:foreground "aquamarine" :weight normal))))
+   `(fixed-pitch-serif
+     ((t (:family ,my-font-family))))
 
-   `(erc-nick-msg-face
-     ((t (:foreground "chocolate1"))))
+   `(border
+     ((t (:background "grey"))))
 
-   `(erc-my-nick-face
-     ((t (:foreground ,my-fgcolor))))
+   `(vertical-border
+     ((t (:foreground "#191919"))))
 
-   `(erc-current-nick-face
-     ((t (:foreground unspecified))))
-
-   `(erc-input-face
-     ((t (:foreground ,my-fgcolor))))
-
-   ;; gnus
-
-   `(gnus-header-name
-     ((t (:foreground "aquamarine"))))
-
-   `(gnus-header-content
-     ((t (:foreground ,my-fgcolor :slant normal))))
-
-   `(gnus-header-from
-     ((t (:foreground ,my-fgcolor))))
-
-   `(gnus-header-subject
-     ((t (:foreground ,my-fgcolor))))
-
-   `(gnus-summary-cancelled
+   `(fringe
      ((t (:background ,my-bgcolor :foreground "#777777"))))
 
-   `(gnus-summary-normal-read
-     ((t (:foreground "chocolate1" :weight normal))))
+   `(cursor
+     ((t (:background ,my-fgcolor :foreground "black"))))
 
-   `(gnus-summary-normal-unread
+   `(highlight
+     ((t (:background "aquamarine" :foreground "black"))))
+
+   `(match
+     ((t (:background ,my-hilite :foreground "aquamarine"))))
+
+   `(lazy-highlight
+     ((t (:background "skyblue4"))))
+
+   `(shadow
+     ((t (:foreground "grey40"))))
+
+   `(show-paren-match
+     ((t (:background "palevioletred1" :foreground "brown4"))))
+
+   `(show-paren-mismatch
+     ((t (:background "chocolate1" :foreground ,my-bgcolor))))
+
+   `(tooltip
+     ((t (:background ,my-bgcolor :foreground ,my-fgcolor))))
+
+   `(region
+     ((t (:background ,my-hilite))))
+
+   `(header-line
+     ((t (:background ,my-bgcolor :foreground "grey"))))
+
+   `(isearch
+     ((t (:background "palevioletred1" :foreground "brown4"))))
+
+   `(link
      ((t (:foreground "aquamarine"))))
 
-   `(gnus-summary-normal-ancient
-     ((t (:foreground ,my-fgcolor))))
-
-   `(gnus-summary-normal-ticked
-     ((t (:foreground "khaki"))))
-
-   `(gnus-summary-low-read
-     ((t (:foreground "chocolate1"))))
-
-   `(gnus-summary-low-unread
-     ((t (:foreground "aquamarine"))))
-
-   `(gnus-summary-low-ancient
-     ((t (:foreground ,my-fgcolor))))
-
-   `(gnus-summary-low-ticked
-     ((t (:foreground "khaki"))))
-
-   `(gnus-summary-high-read
-     ((t (:foreground "chocolate1"))))
-
-   `(gnus-summary-high-unread
-     ((t (:foreground "aquamarine"))))
-
-   `(gnus-summary-high-ancient
-     ((t (:foreground ,my-fgcolor))))
-
-   `(gnus-summary-high-ticked
-     ((t (:foreground "khaki"))))
-
-   `(gnus-summary-selected
-     ((t (:underline unspecified :foreground "aquamarine"))))
-
-   ;; mail message
-
-   `(message-header-name
-     ((t (:foreground "aquamarine"))))
-
-   `(message-header-to
-     ((t (:foreground ,my-fgcolor :weight normal))))
-
-   `(message-header-subject
-     ((t (:foreground ,my-fgcolor))))
-
-   `(message-header-other
-     ((t (:foreground ,my-fgcolor))))
-
-   `(message-header-xheader
-     ((t (:foreground ,my-fgcolor))))
-
-   `(message-header-cc
-     ((t (:foreground ,my-fgcolor))))
-
-   `(message-header-newsgroups
-     ((t (:foreground ,my-fgcolor))))
-
-   `(message-cited-text
+   `(link-visited
      ((t (:foreground "lightsalmon"))))
 
-   `(message-separator
-     ((t (:foreground "#777777"))))
+   `(success
+     ((t (:foreground "palegreen"))))
+
+   ;; modeline
+
+   `(mode-line
+     ((t (:box nil :background "#344950" :foreground ,my-fgcolor))))
+
+   `(mode-line-highlight
+     ((t (:box nil :background "#48666f"))))
+
+   `(mode-line-inactive
+     ((t (:box nil :background "#344950" :foreground "#78949b"))))
+
+   `(mode-line-highlight nil)
+
+   ;; compilation
+
+   `(compilation-mode-line-exit
+     ((t (:foreground "aquamarine" :weight normal))))
+
+   `(compilation-mode-line-run
+     ((t (:foreground "khaki" :weight normal))))
+
+   `(compilation-mode-line-fail
+     ((t (:foreground "lightsalmon" :weight normal))))
+
+   `(compilation-warning
+     ((t (:foreground "khaki" :weight normal))))
+
+   `(compilation-info
+     ((t (:foreground "khaki" :weight normal))))
+
+   `(compilation-info
+     ((t (:foreground "khaki" :weight normal))))
+
+   ;; dired
+
+   `(dired-header
+     ((t (:foreground "aquamarine"))))
+
+   `(dired-directory
+     ((t (:foreground "tan"))))
+
+   ;; minibuffer
+
+   `(minibuffer-prompt
+     ((t (:foreground "aquamarine"))))
+
+   ;; basic text
+
+   `(trailing-whitespace
+     ((t (:background "#675e46"))))
+
+   `(escape-glyph
+     ((t (:foreground "aquamarine"))))
+
+   `(glyphless-char
+     ((t (:height ,my-font-height))))
+
+   ;; font-lock
+
+   `(font-lock-type-face
+     ((t (:foreground "wheat"))))
+
+   `(font-lock-comment-face
+     ((t (:foreground "chocolate1"))))
+
+   `(font-lock-string-face
+     ((t (:foreground "lightsalmon"))))
+
+   `(font-lock-builtin-face
+     ((t (:foreground "aquamarine" :weight normal))))
+
+   `(font-lock-constant-face
+     ((t (:foreground ,my-fgcolor :weight normal))))
+
+   `(font-lock-function-name-face
+     ((t (:foreground "wheat"))))
+
+   `(font-lock-keyword-face
+     ((t (:foreground "aquamarine"))))
+
+   `(font-lock-variable-name-face
+     ((t (:foreground ,my-fgcolor))))
+
+   `(font-lock-preprocessor-face
+     ((t (:foreground "aquamarine" :inherit nil))))
+
+   `(font-lock-warning-face
+     ((t (:foreground "khaki" :weight normal))))
 
    ;; info reader
 
@@ -334,11 +219,6 @@
 
    `(info-menu-star
      ((t (:foreground unspecified))))
-
-   ;; compilation
-
-   `(compilation-info
-     ((t (:foreground "khaki" :weight normal))))
 
    ;; markdown
 
@@ -400,16 +280,6 @@
    `(ido-indicator
      ((t (:foreground "tomato" :background nil))))
 
-   ;; table
-
-   `(table-cell
-     ((t (:foreground ,my-fgcolor :background "#333333"))))
-
-   ;; django html mode
-
-   `(django-html-font-lock-keywords
-     ((t (:foreground "tomato"))))
-
    ;; diff mode
 
    `(diff-file-header
@@ -442,26 +312,6 @@
    `(diff-refine-change
      ((t (:background unspecified))))
 
-   ;; rst
-
-   `(rst-level-1-face
-     ((t (:background unspecified))))
-
-   `(rst-level-2-face
-     ((t (:background unspecified))))
-
-   `(rst-level-3-face
-     ((t (:background unspecified))))
-
-   `(rst-level-4-face
-     ((t (:background unspecified))))
-
-   `(rst-level-5-face
-     ((t (:background unspecified))))
-
-   `(rst-level-6-face
-     ((t (:background unspecified))))
-
    ;; customize
 
    `(custom-button
@@ -490,7 +340,4 @@
    `(widget-single-line-field
      ((t (:box nil :background "#444444"))))
    )
-
-  ;; (setq mode-line-front-space " ")
-  ;; (setq-default mode-line-format (cons (propertize "\u200b" 'display '((raise -0.1) (height 1.2))) mode-line-format))
 )
