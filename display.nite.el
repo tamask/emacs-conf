@@ -122,8 +122,6 @@
    `(mode-line-inactive
      ((t (:box nil :background "#344950" :foreground "#78949b"))))
 
-   `(mode-line-highlight nil)
-
    ;; compilation
 
    `(compilation-mode-line-exit
