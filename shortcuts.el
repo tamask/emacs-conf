@@ -72,3 +72,4 @@
 
 (require 'mouse-drag)
 (global-set-key [down-mouse-2] 'mouse-drag-drag)
+(global-unset-key [mouse-2])
