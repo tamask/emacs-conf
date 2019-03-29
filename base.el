@@ -36,7 +36,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; display tab characters as 4 spaces
-(setq tab-width 4)
+(setq default-tab-width 4)
 
 ;; indentation width
 (setq-default standard-indent 4)

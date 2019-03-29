@@ -62,3 +62,15 @@
     (fill-individual-paragraphs (point-min) (point-max))))
 
 (global-set-key "\M-Q" 'undo-fill-paragraph)
+
+;; magnify text for presentations
+(defun magnify ()
+  "Large text for presentations"
+  (interactive)
+  (set-face-attribute 'default (selected-frame) :height 140))
+
+(defun demagnify ()
+  "Large text for presentations"
+  (interactive)
+  (set-face-attribute 'default (selected-frame) :height 100))
+
