@@ -100,6 +100,14 @@
   (set-face-attribute
    'link-visited t :foreground "#888888")
 
+  ;; dired
+
+  (set-face-attribute
+   'dired-header t :foreground "deep pink")
+
+  (set-face-attribute
+   'dired-directory t :foreground "blue")
+
   ;; modeline
 
   (set-face-attribute
@@ -107,7 +115,7 @@
    :box '(:line-width 1 :color "white"))
 
   (set-face-attribute
-   'mode-line-highlight nil)
+   'mode-line-highlight t :background "cyan4" :foreground "white" :box 'unspecified)
 
   (set-face-attribute
    'mode-line-inactive t :background "white" :foreground "honeydew3"
