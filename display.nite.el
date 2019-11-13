@@ -41,7 +41,7 @@
 
   ;; core colors
 
-  (setq my-fgcolor "#f0f0f0")
+  (setq my-fgcolor "gainsboro")
   ;; (setq my-bgcolor "#222222")
   (setq my-bgcolor "#242424")
   (setq my-hilite "#364b4f")
@@ -74,10 +74,10 @@
      ((t (:background ,my-fgcolor :foreground "black"))))
 
    `(highlight
-     ((t (:background "aquamarine" :foreground "black"))))
+     ((t (:background "cadetblue2" :foreground "black"))))
 
    `(match
-     ((t (:background ,my-hilite :foreground "aquamarine"))))
+     ((t (:background ,my-hilite :foreground "cadetblue2"))))
 
    `(lazy-highlight
      ((t (:background "skyblue4"))))
@@ -86,10 +86,10 @@
      ((t (:foreground "grey40"))))
 
    `(show-paren-match
-     ((t (:background "palevioletred1" :foreground "brown4"))))
+     ((t (:background "cadetblue2" :foreground "brown4"))))
 
    `(show-paren-mismatch
-     ((t (:background "chocolate1" :foreground ,my-bgcolor))))
+     ((t (:background "dimgrey" :foreground ,my-bgcolor))))
 
    `(tooltip
      ((t (:background ,my-bgcolor :foreground ,my-fgcolor))))
@@ -101,13 +101,13 @@
      ((t (:background ,my-bgcolor :foreground "grey"))))
 
    `(isearch
-     ((t (:background "palevioletred1" :foreground "brown4"))))
+     ((t (:background "cadetblue2" :foreground "brown4"))))
 
    `(link
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(link-visited
-     ((t (:foreground "lightsalmon"))))
+     ((t (:foreground "wheat"))))
 
    `(success
      ((t (:foreground "palegreen"))))
@@ -115,24 +115,24 @@
    ;; modeline
 
    `(mode-line
-     ((t (:box nil :background "#344950" :foreground ,my-fgcolor))))
+     ((t (:box nil :background "grey20" :foreground ,my-fgcolor))))
 
    `(mode-line-highlight
-     ((t (:box nil :background "#48666f"))))
+     ((t (:box nil :background "grey25"))))
 
    `(mode-line-inactive
-     ((t (:box nil :background "#344950" :foreground "#78949b"))))
+     ((t (:box nil :background "grey20" :foreground "dimgrey"))))
 
    ;; compilation
 
    `(compilation-mode-line-exit
-     ((t (:foreground "aquamarine" :weight normal))))
+     ((t (:foreground "cadetblue2" :weight normal))))
 
    `(compilation-mode-line-run
      ((t (:foreground "khaki" :weight normal))))
 
    `(compilation-mode-line-fail
-     ((t (:foreground "lightsalmon" :weight normal))))
+     ((t (:foreground "wheat" :weight normal))))
 
    `(compilation-warning
      ((t (:foreground "khaki" :weight normal))))
@@ -146,7 +146,7 @@
    ;; dired
 
    `(dired-header
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(dired-directory
      ((t (:foreground "tan"))))
@@ -154,7 +154,7 @@
    ;; minibuffer
 
    `(minibuffer-prompt
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    ;; basic text
 
@@ -162,7 +162,7 @@
      ((t (:background "#675e46"))))
 
    `(escape-glyph
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(glyphless-char
      ((t (:height ,my-font-height))))
@@ -170,31 +170,31 @@
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground "wheat"))))
+     ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-comment-face
-     ((t (:foreground "chocolate1"))))
+     ((t (:foreground "dimgrey" :slant italic))))
 
    `(font-lock-string-face
-     ((t (:foreground "lightsalmon"))))
+     ((t (:foreground "#ff9595"))))
 
    `(font-lock-builtin-face
-     ((t (:foreground "aquamarine" :weight normal))))
+     ((t (:foreground "cadetblue2" :weight normal))))
 
    `(font-lock-constant-face
      ((t (:foreground ,my-fgcolor :weight normal))))
 
    `(font-lock-function-name-face
-     ((t (:foreground "wheat"))))
+     ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-keyword-face
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(font-lock-variable-name-face
      ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-preprocessor-face
-     ((t (:foreground "aquamarine" :inherit nil))))
+     ((t (:foreground ,my-fgcolor :inherit nil))))
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
@@ -211,7 +211,7 @@
      ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-node
-     ((t (:weight normal :slant normal :foreground "aquamarine"))))
+     ((t (:weight normal :slant normal :foreground "cadetblue2"))))
 
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
@@ -222,25 +222,25 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground "aquamarine"))))
+     ((t (:weight normal :foreground "cadetblue2"))))
 
    `(markdown-header-face-1
-     ((t (:height unspecified :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "cadetblue2"))))
 
    `(markdown-header-face-2
-     ((t (:height unspecified :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "cadetblue2"))))
 
    `(markdown-header-face-3
-     ((t (:height unspecified :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "cadetblue2"))))
 
    `(markdown-header-face-4
-     ((t (:height unspecified :foreground "aquamarine"))))
+     ((t (:height unspecified :foreground "cadetblue2"))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground "aquamarine"))))
+     ((t (:underline t :foreground "cadetblue2"))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground "aquamarine"))))
+     ((t (:slant italic :foreground "cadetblue2"))))
 
    `(markdown-bold-face
      ((t (:foreground ,my-fgcolor))))
@@ -249,16 +249,16 @@
      ((t (:foreground ,my-fgcolor))))
 
    `(markdown-inline-code-face
-     ((t (:foreground "lightsalmon"))))
+     ((t (:foreground "#ff9595"))))
 
    `(markdown-pre-face
-     ((t (:foreground "lightsalmon"))))
+     ((t (:foreground "#ff9595"))))
 
    `(markdown-url-face
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(markdown-link-face
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    ;; iswitchb
 
@@ -266,7 +266,7 @@
      ((t (:foreground "khaki"))))
 
    `(iswitchb-single-match
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    ;; ido
 
@@ -274,7 +274,7 @@
      ((t (:foreground "khaki"))))
 
    `(ido-only-match
-     ((t (:foreground "aquamarine"))))
+     ((t (:foreground "cadetblue2"))))
 
    `(ido-indicator
      ((t (:foreground "tomato" :background nil))))
@@ -291,7 +291,7 @@
      ((t (:background unspecified :foreground unspecified :weight bold))))
 
    `(diff-hunk-header
-     ((t (:background unspecified :foreground "chocolate1"))))
+     ((t (:background unspecified :foreground "dimgrey"))))
 
    `(diff-index
      ((t (:background unspecified :foreground ,my-fgcolor))))
@@ -300,13 +300,13 @@
      ((t (:foreground "yellowgreen"))))
 
    `(diff-indicator-removed
-     ((t (:foreground "chocolate1"))))
+     ((t (:foreground "dimgrey"))))
 
    `(diff-indicator-changed
      ((t (:foreground "khaki"))))
 
    `(diff-removed
-     ((t (:foreground "lightsalmon"))))
+     ((t (:foreground "dimgrey"))))
 
    `(diff-refine-change
      ((t (:background unspecified))))
@@ -320,7 +320,7 @@
      ((t (:box nil :background "skyblue4" :foreground "beige"))))
 
    `(custom-button-pressed
-     ((t (:box nil :background "palevioletred1" :foreground "brown4"))))
+     ((t (:box nil :background "cadetblue2" :foreground "brown4"))))
 
    `(custom-group-tag
      ((t (:height unspecified))))
