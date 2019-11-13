@@ -37,7 +37,8 @@
   ;; colors
 
   ;;(setq my-fgcolor "#fff9bc")
-  (setq my-fgcolor "#f0f0dc")
+  ;; (setq my-fgcolor "#f0f0dc")
+  (setq my-fgcolor "#f0f0f0")
   (setq my-bgcolor "#222222")
 
   ;; basic

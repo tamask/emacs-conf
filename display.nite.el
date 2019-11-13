@@ -41,8 +41,9 @@
 
   ;; core colors
 
-  (setq my-fgcolor "beige")
-  (setq my-bgcolor "#222222")
+  (setq my-fgcolor "#f0f0f0")
+  ;; (setq my-bgcolor "#222222")
+  (setq my-bgcolor "#242424")
   (setq my-hilite "#364b4f")
 
   (custom-set-faces
