@@ -45,12 +45,17 @@
   ;; (setq my-bgcolor "#222222")
   (setq my-bgcolor "#242424")
   (setq my-hilite "#364b4f")
+  (setq my-maincolor "cadetblue2")
+  (setq my-auxcolor "#ff9595")
 
   (custom-set-faces
    ;; basic
 
    `(default
      ((t (:family ,my-font-family :height ,my-font-height :background ,my-bgcolor :foreground ,my-fgcolor))))
+
+   `(error
+     ((t (:foreground ,my-maincolor :weight normal))))
 
    `(variable-pitch
      ((t (:family ,my-font-family))))
@@ -149,7 +154,10 @@
      ((t (:foreground "cadetblue2"))))
 
    `(dired-directory
-     ((t (:foreground "tan"))))
+     ((t (:foreground "cadetblue2"))))
+
+   `(dired-flagged
+     ((t (:foreground "#ff9595" :weight normal))))
 
    ;; minibuffer
 
@@ -170,10 +178,10 @@
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground "cadetblue2"))))
 
    `(font-lock-comment-face
-     ((t (:foreground "dimgrey" :slant italic))))
+     ((t (:foreground "dimgrey"))))
 
    `(font-lock-string-face
      ((t (:foreground "#ff9595"))))
@@ -194,7 +202,7 @@
      ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-preprocessor-face
-     ((t (:foreground ,my-fgcolor :inherit nil))))
+     ((t (:foreground "cadetblue2" :inherit nil))))
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))

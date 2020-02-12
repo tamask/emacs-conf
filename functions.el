@@ -67,10 +67,36 @@
 (defun magnify ()
   "Large text for presentations"
   (interactive)
-  (set-face-attribute 'default (selected-frame) :height 140))
+  (set-face-attribute 'default (selected-frame) :height my-font-height-magnified))
 
 (defun demagnify ()
   "Large text for presentations"
   (interactive)
-  (set-face-attribute 'default (selected-frame) :height 100))
+  (set-face-attribute 'default (selected-frame) :height my-font-height))
 
+;; sum numbers in region
+(require 'cl-lib)
+(defun sum-numbers-in-region (start end)
+  (interactive "r")
+  (message "%s"
+           (cl-reduce #'+
+                      (split-string (buffer-substring start
+                                                      end))
+                      :key #'string-to-number)))
+
+(defun increment-number-at-point ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(defun decrement-number-at-point ()
+      (interactive)
+      (skip-chars-backward "0-9")
+      (or (looking-at "[0-9]+")
+          (error "No number at point"))
+      (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+
+(global-set-key (kbd "M-n") 'increment-number-at-point)
+(global-set-key (kbd "M-p") 'decrement-number-at-point)

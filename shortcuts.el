@@ -62,6 +62,7 @@
   (end-kbd-macro))
 
 (global-set-key '[(f1)] 'call-last-kbd-macro)
+(global-set-key (kbd "M-RET") 'call-last-kbd-macro)
 (global-set-key '[(shift f1)] 'toggle-kbd-macro-recording-on)
 
 ;; tags
@@ -73,3 +74,6 @@
 (require 'mouse-drag)
 (global-set-key [down-mouse-2] 'mouse-drag-drag)
 (global-unset-key [mouse-2])
+
+;; disable easy to trigger exit command
+(global-unset-key (kbd "C-x C-c"))
