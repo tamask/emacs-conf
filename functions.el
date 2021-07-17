@@ -100,3 +100,8 @@
 
 (global-set-key (kbd "M-n") 'increment-number-at-point)
 (global-set-key (kbd "M-p") 'decrement-number-at-point)
+
+(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
+(define-key minibuffer-local-map (kbd "C-<tab>") 'dabbrev-expand)
+
+(defalias 'q 'kill-emacs)

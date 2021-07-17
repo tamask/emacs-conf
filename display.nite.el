@@ -43,7 +43,8 @@
 
   (setq my-fgcolor "gainsboro")
   ;; (setq my-bgcolor "#222222")
-  (setq my-bgcolor "#242424")
+  ;; (setq my-bgcolor "#242424")
+  (setq my-bgcolor "#1d1d1d")
   (setq my-hilite "#364b4f")
   (setq my-maincolor "cadetblue2")
   (setq my-auxcolor "#ff9595")
@@ -120,13 +121,13 @@
    ;; modeline
 
    `(mode-line
-     ((t (:box nil :background "grey20" :foreground ,my-fgcolor))))
+     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground ,my-fgcolor))))
 
    `(mode-line-highlight
      ((t (:box nil :background "grey25"))))
 
    `(mode-line-inactive
-     ((t (:box nil :background "grey20" :foreground "dimgrey"))))
+     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground "dimgrey"))))
 
    ;; compilation
 

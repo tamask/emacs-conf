@@ -9,7 +9,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; local site-lisp
-(setq load-path (append '("~/site-lisp/" ) load-path))
+(setq load-path (append '("~/.site-lisp/" ) load-path))
 ;; (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
 ;;     (let* ((my-lisp-dir "~/site-lisp/")
 ;;            (default-directory my-lisp-dir))
@@ -111,6 +111,11 @@
 (require 'dired-x)
 (setq-default dired-omit-files-p t) ; this is buffer-local variable
 (setq dired-omit-files (concat dired-omit-files "\\|\\.meta$"))
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+
+;; case insensitive completion for find-file
+
+(setq read-file-name-completion-ignore-case t)
 
 ;; stop on subwords
 (define-globalized-minor-mode global-subword-mode subword-mode
