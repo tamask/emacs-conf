@@ -7,7 +7,7 @@
 
 (defun rename-buffer-with-directory-postfix ()
   (interactive)
-  (let ((dir-name (car (reverse (eshell-split-path 
+  (let ((dir-name (car (reverse (eshell-split-path
        (file-name-directory (buffer-file-name)))))))
     (rename-buffer
      (concat
@@ -105,3 +105,5 @@
 (define-key minibuffer-local-map (kbd "C-<tab>") 'dabbrev-expand)
 
 (defalias 'q 'kill-emacs)
+
+(global-set-key (kbd "\C-c1") 'delete-trailing-whitespace)

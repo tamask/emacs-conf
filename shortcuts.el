@@ -76,4 +76,5 @@
 (global-unset-key [mouse-2])
 
 ;; disable easy to trigger exit command
-(global-unset-key (kbd "C-x C-c"))
+(global-unset-key (kbd "C-x C-c")) ;; kill window
+(global-unset-key (kbd "C-t")) ;; transpose-chars

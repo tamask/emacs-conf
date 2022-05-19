@@ -11,6 +11,7 @@
   (let ((my-frame-left 200)) (boundp 'my-frame-left))
   (let ((my-frame-width 100)) (boundp 'my-frame-width))
   (let ((my-frame-height 40)) (boundp 'my-frame-height))
+  (let ((my-bgcolor "#202020")) (boundp 'my-bgcolor))
 
   ;; default frame attributes and initial position
   (setq my-frame-alist `
@@ -44,7 +45,8 @@
   (setq my-fgcolor "gainsboro")
   ;; (setq my-bgcolor "#222222")
   ;; (setq my-bgcolor "#242424")
-  (setq my-bgcolor "#1d1d1d")
+  ;; (setq my-bgcolor "#1d1d1d")
+  ;; (setq my-bgcolor "#202020")
   (setq my-hilite "#364b4f")
   (setq my-maincolor "cadetblue2")
   (setq my-auxcolor "#ff9595")
@@ -80,10 +82,10 @@
      ((t (:background ,my-fgcolor :foreground "black"))))
 
    `(highlight
-     ((t (:background "cadetblue2" :foreground "black"))))
+     ((t (:background ,my-maincolor :foreground "black"))))
 
    `(match
-     ((t (:background ,my-hilite :foreground "cadetblue2"))))
+     ((t (:background ,my-hilite :foreground ,my-maincolor))))
 
    `(lazy-highlight
      ((t (:background "skyblue4"))))
@@ -92,7 +94,7 @@
      ((t (:foreground "grey40"))))
 
    `(show-paren-match
-     ((t (:background "cadetblue2" :foreground "brown4"))))
+     ((t (:background ,my-maincolor :foreground "brown4"))))
 
    `(show-paren-mismatch
      ((t (:background "dimgrey" :foreground ,my-bgcolor))))
@@ -107,10 +109,10 @@
      ((t (:background ,my-bgcolor :foreground "grey"))))
 
    `(isearch
-     ((t (:background "cadetblue2" :foreground "brown4"))))
+     ((t (:background "palevioletred1" :foreground "brown4"))))
 
    `(link
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(link-visited
      ((t (:foreground "wheat"))))
@@ -132,7 +134,7 @@
    ;; compilation
 
    `(compilation-mode-line-exit
-     ((t (:foreground "cadetblue2" :weight normal))))
+     ((t (:foreground ,my-maincolor :weight normal))))
 
    `(compilation-mode-line-run
      ((t (:foreground "khaki" :weight normal))))
@@ -152,10 +154,10 @@
    ;; dired
 
    `(dired-header
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(dired-directory
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(dired-flagged
      ((t (:foreground "#ff9595" :weight normal))))
@@ -163,15 +165,15 @@
    ;; minibuffer
 
    `(minibuffer-prompt
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    ;; basic text
 
    `(trailing-whitespace
-     ((t (:background "#675e46"))))
+     ((t (:background "palevioletred1"))))
 
    `(escape-glyph
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(glyphless-char
      ((t (:height ,my-font-height))))
@@ -179,7 +181,7 @@
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(font-lock-comment-face
      ((t (:foreground "dimgrey"))))
@@ -188,7 +190,7 @@
      ((t (:foreground "#ff9595"))))
 
    `(font-lock-builtin-face
-     ((t (:foreground "cadetblue2" :weight normal))))
+     ((t (:foreground ,my-maincolor :weight normal))))
 
    `(font-lock-constant-face
      ((t (:foreground ,my-fgcolor :weight normal))))
@@ -197,13 +199,13 @@
      ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-keyword-face
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(font-lock-variable-name-face
      ((t (:foreground ,my-fgcolor))))
 
    `(font-lock-preprocessor-face
-     ((t (:foreground "cadetblue2" :inherit nil))))
+     ((t (:foreground ,my-maincolor :inherit nil))))
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
@@ -220,7 +222,7 @@
      ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-node
-     ((t (:weight normal :slant normal :foreground "cadetblue2"))))
+     ((t (:weight normal :slant normal :foreground ,my-maincolor))))
 
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
@@ -231,25 +233,25 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground "cadetblue2"))))
+     ((t (:weight normal :foreground ,my-maincolor))))
 
    `(markdown-header-face-1
-     ((t (:height unspecified :foreground "cadetblue2"))))
+     ((t (:height unspecified :foreground ,my-maincolor))))
 
    `(markdown-header-face-2
-     ((t (:height unspecified :foreground "cadetblue2"))))
+     ((t (:height unspecified :foreground ,my-maincolor))))
 
    `(markdown-header-face-3
-     ((t (:height unspecified :foreground "cadetblue2"))))
+     ((t (:height unspecified :foreground ,my-maincolor))))
 
    `(markdown-header-face-4
-     ((t (:height unspecified :foreground "cadetblue2"))))
+     ((t (:height unspecified :foreground ,my-maincolor))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground "cadetblue2"))))
+     ((t (:underline t :foreground ,my-maincolor))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground "cadetblue2"))))
+     ((t (:slant italic :foreground ,my-maincolor))))
 
    `(markdown-bold-face
      ((t (:foreground ,my-fgcolor))))
@@ -264,10 +266,10 @@
      ((t (:foreground "#ff9595"))))
 
    `(markdown-url-face
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(markdown-link-face
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    ;; iswitchb
 
@@ -275,7 +277,7 @@
      ((t (:foreground "khaki"))))
 
    `(iswitchb-single-match
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    ;; ido
 
@@ -283,7 +285,7 @@
      ((t (:foreground "khaki"))))
 
    `(ido-only-match
-     ((t (:foreground "cadetblue2"))))
+     ((t (:foreground ,my-maincolor))))
 
    `(ido-indicator
      ((t (:foreground "tomato" :background nil))))
@@ -329,7 +331,7 @@
      ((t (:box nil :background "skyblue4" :foreground "beige"))))
 
    `(custom-button-pressed
-     ((t (:box nil :background "cadetblue2" :foreground "brown4"))))
+     ((t (:box nil :background ,my-maincolor :foreground "brown4"))))
 
    `(custom-group-tag
      ((t (:height unspecified))))
