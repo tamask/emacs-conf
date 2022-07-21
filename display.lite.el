@@ -111,11 +111,11 @@
   ;; modeline
 
   (set-face-attribute
-   'mode-line t :background "white" :foreground "cyan4"
+   'mode-line t :background "white" :foreground "blue"
    :box '(:line-width 1 :color "white"))
 
   (set-face-attribute
-   'mode-line-highlight t :background "cyan4" :foreground "white" :box 'unspecified)
+   'mode-line-highlight t :background "blue" :foreground "white" :box 'unspecified)
 
   (set-face-attribute
    'mode-line-inactive t :background "white" :foreground "honeydew3"
@@ -158,7 +158,7 @@
    'font-lock-keyword-face t :foreground "blue")
 
   (set-face-attribute
-   'font-lock-type-face t :foreground "cyan4")
+   'font-lock-type-face t :foreground "blue")
 
   (set-face-attribute
    'font-lock-variable-name-face t :foreground my-fgcolor)
