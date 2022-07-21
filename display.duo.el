@@ -11,17 +11,19 @@
   (let ((my-frame-left 200)) (boundp 'my-frame-left))
   (let ((my-frame-width 100)) (boundp 'my-frame-width))
   (let ((my-frame-height 40)) (boundp 'my-frame-height))
-  (let ((my-bgcolor "#202020")) (boundp 'my-bgcolor))
-  (let ((my-fgcolor "gainsboro")) (boundp 'my-fgcolor))
 
   ;; core colors
 
-  ;; (setq my-fgcolor "gainsboro")
-  ;; (setq my-bgcolor "#202020")
-  (setq my-maincolor "cadetblue2")
-  (setq my-auxcolor "#ff9595")
-  (setq my-hilite "#364b4f")
-  (setq my-stringcolor "#ff9595")
+  (setq duo-gradient-1   "#ffffff")
+  (setq duo-gradient-1_5 "#dddddd")
+  (setq duo-gradient-2   "#bbbbbb")
+  (setq duo-gradient-2_5 "#888888")
+  (setq duo-gradient-3   "#555555")
+  (setq duo-gradient-3_5 "#444444")
+  (setq duo-gradient-4   "#333333")
+  (setq duo-gradient-4_5 "#282828")
+  (setq duo-gradient-5   "#202020")
+  (setq duo-error        "palevioletred1")
 
   ;; default frame attributes and initial position
   (setq my-frame-alist `
@@ -54,10 +56,10 @@
    ;; basic
 
    `(default
-     ((t (:family ,my-font-family :height ,my-font-height :background ,my-bgcolor :foreground ,my-fgcolor))))
+     ((t (:family ,my-font-family :height ,my-font-height :background ,duo-gradient-5 :foreground ,duo-gradient-2))))
 
    `(error
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,duo-error :weight normal))))
 
    `(variable-pitch
      ((t (:family ,my-font-family))))
@@ -75,16 +77,16 @@
      ((t (:foreground "#191919"))))
 
    `(fringe
-     ((t (:background ,my-bgcolor :foreground "#777777"))))
+     ((t (:background ,duo-gradient-5 :foreground "#777777"))))
 
    `(cursor
-     ((t (:background ,my-fgcolor :foreground "black"))))
+     ((t (:background ,duo-gradient-1 :foreground ,duo-gradient-5))))
 
    `(highlight
-     ((t (:background ,my-maincolor :foreground "black"))))
+     ((t (:background ,duo-gradient-1 :foreground ,duo-gradient-5))))
 
    `(match
-     ((t (:background ,my-hilite :foreground ,my-maincolor))))
+     ((t (:background ,duo-gradient-4 :foreground ,duo-gradient-1))))
 
    `(lazy-highlight
      ((t (:background "skyblue4"))))
@@ -93,25 +95,25 @@
      ((t (:foreground "grey40"))))
 
    `(show-paren-match
-     ((t (:background ,my-maincolor :foreground "brown4"))))
+     ((t (:background ,duo-gradient-3_5 :foreground ,duo-gradient-1))))
 
    `(show-paren-mismatch
-     ((t (:background "dimgrey" :foreground ,my-bgcolor))))
+     ((t (:background ,duo-error :foreground ,duo-gradient-5))))
 
    `(tooltip
-     ((t (:background ,my-bgcolor :foreground ,my-fgcolor))))
+     ((t (:background ,duo-gradient-5 :foreground ,duo-gradient-2))))
 
    `(region
-     ((t (:background ,my-hilite))))
+     ((t (:background ,duo-gradient-4))))
 
    `(header-line
-     ((t (:background ,my-bgcolor :foreground "grey"))))
+     ((t (:background ,duo-gradient-5 :foreground "grey"))))
 
    `(isearch
      ((t (:background "palevioletred1" :foreground "brown4"))))
 
    `(link
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(link-visited
      ((t (:foreground "wheat"))))
@@ -122,18 +124,18 @@
    ;; modeline
 
    `(mode-line
-     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground ,my-fgcolor))))
+     ((t (:box (:line-width 7 :color ,duo-gradient-4) :background ,duo-gradient-4 :foreground ,duo-gradient-2))))
 
    `(mode-line-highlight
-     ((t (:box nil :background "grey25"))))
+     ((t (:box nil :background ,duo-gradient-3))))
 
    `(mode-line-inactive
-     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground "dimgrey"))))
+     ((t (:box (:line-width 7 :color ,duo-gradient-4) :background ,duo-gradient-4 :foreground ,duo-gradient-2_5))))
 
    ;; compilation
 
    `(compilation-mode-line-exit
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,duo-gradient-1 :weight normal))))
 
    `(compilation-mode-line-run
      ((t (:foreground "khaki" :weight normal))))
@@ -153,10 +155,10 @@
    ;; dired
 
    `(dired-header
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(dired-directory
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(dired-flagged
      ((t (:foreground "#ff9595" :weight normal))))
@@ -164,7 +166,7 @@
    ;; minibuffer
 
    `(minibuffer-prompt
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    ;; basic text
 
@@ -172,7 +174,7 @@
      ((t (:background "palevioletred1"))))
 
    `(escape-glyph
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(glyphless-char
      ((t (:height ,my-font-height))))
@@ -180,31 +182,31 @@
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(font-lock-comment-face
-     ((t (:foreground "dimgrey"))))
+     ((t (:foreground ,duo-gradient-3))))
 
    `(font-lock-string-face
-     ((t (:foreground ,my-stringcolor))))
+     ((t (:foreground ,duo-gradient-2_5 :slant italic))))
 
    `(font-lock-builtin-face
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,duo-gradient-1 :weight normal))))
 
    `(font-lock-constant-face
-     ((t (:foreground ,my-fgcolor :weight normal))))
+     ((t (:foreground ,duo-gradient-1 :weight normal))))
 
    `(font-lock-function-name-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,duo-gradient-2))))
 
    `(font-lock-keyword-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(font-lock-variable-name-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,duo-gradient-2))))
 
    `(font-lock-preprocessor-face
-     ((t (:foreground ,my-maincolor :inherit nil))))
+     ((t (:foreground ,duo-gradient-1 :inherit nil))))
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
@@ -221,7 +223,7 @@
      ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-node
-     ((t (:weight normal :slant normal :foreground ,my-maincolor))))
+     ((t (:weight normal :slant normal :foreground ,duo-gradient-1))))
 
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
@@ -232,31 +234,31 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground ,my-maincolor))))
+     ((t (:weight normal :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-1
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-2
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-3
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-4
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground ,my-maincolor))))
+     ((t (:underline t :foreground ,duo-gradient-1))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground ,my-maincolor))))
+     ((t (:slant italic :foreground ,duo-gradient-1))))
 
    `(markdown-bold-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,duo-gradient-2))))
 
    `(markdown-italic-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,duo-gradient-2))))
 
    `(markdown-inline-code-face
      ((t (:foreground "#ff9595"))))
@@ -265,10 +267,10 @@
      ((t (:foreground "#ff9595"))))
 
    `(markdown-url-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(markdown-link-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    ;; iswitchb
 
@@ -276,7 +278,7 @@
      ((t (:foreground "khaki"))))
 
    `(iswitchb-single-match
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    ;; ido
 
@@ -284,7 +286,7 @@
      ((t (:foreground "khaki"))))
 
    `(ido-only-match
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,duo-gradient-1))))
 
    `(ido-indicator
      ((t (:foreground "tomato" :background nil))))
@@ -304,7 +306,7 @@
      ((t (:background unspecified :foreground "dimgrey"))))
 
    `(diff-index
-     ((t (:background unspecified :foreground ,my-fgcolor))))
+     ((t (:background unspecified :foreground ,duo-gradient-2))))
 
    `(diff-indicator-added
      ((t (:foreground "yellowgreen"))))
@@ -330,7 +332,7 @@
      ((t (:box nil :background "skyblue4" :foreground "beige"))))
 
    `(custom-button-pressed
-     ((t (:box nil :background ,my-maincolor :foreground "brown4"))))
+     ((t (:box nil :background ,duo-gradient-1 :foreground "brown4"))))
 
    `(custom-group-tag
      ((t (:height unspecified))))
