@@ -111,15 +111,13 @@
   ;; modeline
 
   (set-face-attribute
-   'mode-line t :background "white" :foreground "blue"
-   :box '(:line-width 1 :color "white"))
+   'mode-line t :background "white" :foreground "blue" :box 'unspecified)
 
   (set-face-attribute
    'mode-line-highlight t :background "blue" :foreground "white" :box 'unspecified)
 
   (set-face-attribute
-   'mode-line-inactive t :background "white" :foreground "honeydew3"
-   :box '(:line-width 1 :color "white"))
+   'mode-line-inactive t :background "white" :foreground "honeydew3" :box 'unspecified)
 
   (set-face-attribute
    'mode-line-highlight nil)

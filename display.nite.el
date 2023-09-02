@@ -122,13 +122,13 @@
    ;; modeline
 
    `(mode-line
-     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground ,my-fgcolor))))
+     ((t (:box nil :background "grey20" :foreground ,my-fgcolor))))
 
    `(mode-line-highlight
      ((t (:box nil :background "grey25"))))
 
    `(mode-line-inactive
-     ((t (:box (:line-width 7 :color "grey20") :background "grey20" :foreground "dimgrey"))))
+     ((t (:box nil :background "grey20" :foreground "dimgrey"))))
 
    ;; compilation
 
