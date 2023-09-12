@@ -38,6 +38,9 @@
 
   (setq my-fgcolor "black")
   (setq my-bgcolor "#eeeeee")
+  ;; (setq my-second "blue")
+  (setq my-accent "#5500ff")
+  (setq my-second "deep pink")
 
   ;; basic
 
@@ -74,7 +77,7 @@
    'shadow t :foreground "grey40")
 
   (set-face-attribute
-   'show-paren-match t :background "deep pink" :foreground "white")
+   'show-paren-match t :background my-second :foreground "white")
 
   (set-face-attribute
    'show-paren-mismatch t :background "red" :foreground "white")
@@ -95,7 +98,7 @@
    'lazy-highlight t :background "yellow" :foreground "firebrick")
 
   (set-face-attribute
-   'link t :foreground "blue")
+   'link t :foreground my-accent)
 
   (set-face-attribute
    'link-visited t :foreground "#888888")
@@ -103,18 +106,18 @@
   ;; dired
 
   (set-face-attribute
-   'dired-header t :foreground "deep pink")
+   'dired-header t :foreground my-second)
 
   (set-face-attribute
-   'dired-directory t :foreground "blue")
+   'dired-directory t :foreground my-accent)
 
   ;; modeline
 
   (set-face-attribute
-   'mode-line t :background "white" :foreground "blue" :box 'unspecified)
+   'mode-line t :background "white" :foreground my-accent :box 'unspecified)
 
   (set-face-attribute
-   'mode-line-highlight t :background "blue" :foreground "white" :box 'unspecified)
+   'mode-line-highlight t :background my-accent :foreground "white" :box 'unspecified)
 
   (set-face-attribute
    'mode-line-inactive t :background "white" :foreground "honeydew3" :box 'unspecified)
@@ -125,7 +128,7 @@
   ;; minibuffer
 
   (set-face-attribute
-   'minibuffer-prompt t :foreground "deep pink")
+   'minibuffer-prompt t :foreground my-second)
 
   ;; basic text
 
@@ -133,7 +136,7 @@
    'trailing-whitespace t :background "#675e46")
 
   (set-face-attribute
-   'escape-glyph t :foreground "deep pink")
+   'escape-glyph t :foreground my-second)
 
   ;; font-lock
 
@@ -141,22 +144,22 @@
    'font-lock-comment-face t :foreground "#ababab")
 
   (set-face-attribute
-   'font-lock-string-face t :foreground "deep pink")
+   'font-lock-string-face t :foreground my-second)
 
   (set-face-attribute
-   'font-lock-builtin-face t :foreground "blue") ;; :foreground my-fgcolor :weight 'bold)
+   'font-lock-builtin-face t :foreground my-accent) ;; :foreground my-fgcolor :weight 'bold)
 
   (set-face-attribute
-   'font-lock-constant-face t :foreground "blue") ;; :foreground my-fgcolor :weight 'bold)
+   'font-lock-constant-face t :foreground my-accent) ;; :foreground my-fgcolor :weight 'bold)
 
   (set-face-attribute
    'font-lock-function-name-face t :foreground 'unspecified)
 
   (set-face-attribute
-   'font-lock-keyword-face t :foreground "blue")
+   'font-lock-keyword-face t :foreground my-accent)
 
   (set-face-attribute
-   'font-lock-type-face t :foreground "blue")
+   'font-lock-type-face t :foreground my-accent)
 
   (set-face-attribute
    'font-lock-variable-name-face t :foreground my-fgcolor)
@@ -165,7 +168,7 @@
   ;;  'font-lock-variable-name-face t :foreground nil :inherit nil)
 
   (set-face-attribute
-   'font-lock-preprocessor-face t :foreground "blue" :inherit nil)
+   'font-lock-preprocessor-face t :foreground my-accent :inherit nil)
 
   (set-face-attribute
    'font-lock-warning-face t :foreground "orangered" :weight 'normal)
