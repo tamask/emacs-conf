@@ -9,7 +9,8 @@
   (c-set-offset 'substatement-open '0)
   (c-set-offset 'arglist-cont-nonempty '+)
   (c-set-offset 'arglist-intro '+)
-  (c-set-offset 'arglist-close '0))
+  (c-set-offset 'arglist-close '0)
+  (c-set-offset 'func-decl-cont '0))
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
