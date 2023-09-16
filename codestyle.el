@@ -12,4 +12,5 @@
   (c-set-offset 'arglist-close '0))
 
 (add-hook 'c-mode-hook 'my-c-mode-hook)
+(add-hook 'c++-mode-hook 'my-c-mode-hook)
 (add-hook 'csharp-mode-hook 'my-c-mode-hook)
