@@ -39,7 +39,8 @@
   (setq my-fgcolor "black")
   (setq my-bgcolor "#eeeeee")
   ;; (setq my-second "blue")
-  (setq my-accent "#5500ff")
+  ;; (setq my-accent "#5500ff")
+  (setq my-accent "#6865dd")
   (setq my-second "deep pink")
 
   ;; basic

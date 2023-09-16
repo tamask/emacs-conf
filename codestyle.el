@@ -6,7 +6,7 @@
 
 (defun my-c-mode-hook ()
   (setq c-basic-offset 4)
-  (c-set-offset 'substatement-open 0)
+  (c-set-offset 'substatement-open '0)
   (c-set-offset 'arglist-cont-nonempty '+)
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close '0))
