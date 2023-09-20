@@ -186,7 +186,7 @@
      ((t (:foreground ,my-maincolor))))
 
    `(font-lock-comment-face
-     ((t (:foreground "dimgrey"))))
+     ((t (:foreground "dimgrey" :slant italic))))
 
    `(font-lock-string-face
      ((t (:foreground ,my-stringcolor))))
