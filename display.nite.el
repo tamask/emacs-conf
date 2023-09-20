@@ -16,9 +16,12 @@
 
   ;; core colors
 
-  ;; (setq my-fgcolor "gainsboro")
-  ;; (setq my-bgcolor "#202020")
-  (setq my-maincolor "cadetblue2")
+  (setq my-fgcolor "#cccccc")
+  (setq my-bgcolor "#202020")
+  ;;(setq my-maincolor "cadetblue2")
+  ;;(setq my-maincolor "#97a4ef")
+  ;; (setq my-maincolor "#9fadfc")
+  (setq my-maincolor "#b0bcfc")
   (setq my-auxcolor "#ff9595")
   (setq my-hilite "#364b4f")
   (setq my-stringcolor "#ff9595")

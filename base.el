@@ -146,3 +146,6 @@
 
 ;; quick yes-no
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; disable annoying bell sound
+(setq ring-bell-function 'ignore)
