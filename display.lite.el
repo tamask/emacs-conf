@@ -142,7 +142,7 @@
   ;; font-lock
 
   (set-face-attribute
-   'font-lock-comment-face t :foreground "#ababab" :slant italic)
+   'font-lock-comment-face t :foreground "#ababab" :slant 'italic)
 
   (set-face-attribute
    'font-lock-string-face t :foreground my-second)
