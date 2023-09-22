@@ -1,5 +1,7 @@
 ;; (add-hook 'csharp-mode-hook (lambda () (setq comment-start "/*" comment-end "*/")))
 
+(setq js-indent-level 4)
+
 (add-hook 'html-mode-hook (lambda () (set (make-local-variable 'sgml-basic-offset) 4)))
 
 (setq shader-indent-offset 4)
