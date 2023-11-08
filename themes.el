@@ -14,6 +14,7 @@
 
 (defun theme-auto ()
   (interactive)
-  (if (theme-dark-mode) (theme-night) (theme-light)))
+  (when window-system
+    (if (theme-dark-mode) (theme-night) (theme-light))))
 
 (theme-auto)
