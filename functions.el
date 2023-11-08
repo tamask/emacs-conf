@@ -45,11 +45,13 @@ This command does not push text to `kill-ring'."
 ;(global-set-key (kbd "C-S-k") 'my-delete-line-backward) ; Ctrl+Shift+k
 ;(global-set-key (kbd "C-k") 'my-delete-line)
 ;(global-set-key (kbd "M-d") 'my-delete-word)
+
 (global-set-key (kbd "<M-backspace>") 'my-backward-delete-word)
 (global-set-key (kbd "<C-backspace>") 'my-backward-delete-word)
 
 
 ;; rename buffers to <filename>:<parent-dir>
+
 (require 'eshell)
 
 (defun rename-buffer-with-directory-postfix ()
@@ -63,7 +65,8 @@ This command does not push text to `kill-ring'."
 
 (global-set-key (kbd "C-c r") 'rename-buffer-with-directory-postfix)
 
-;; A function for quickly toggling the display of trailing whitespace.
+;; a function for quickly toggling the display of trailing whitespace.
+
 (defun toggle-trailing-whitespace-display ()
   (interactive)
   (save-excursion
@@ -77,7 +80,8 @@ This command does not push text to `kill-ring'."
 
 (global-set-key "\C-ce" 'toggle-trailing-whitespace-display)
 
-;; Replace all whitespace in the region with single spaces
+;; replace all whitespace in the region with single spaces
+
 (defun collapse-whitespace (beg end)
   "replace all whitespace in the region with single spaces"
   (interactive "r")
@@ -89,6 +93,7 @@ This command does not push text to `kill-ring'."
         (replace-match " ")))))
 
 ;; visual wrap/unwrap
+
 (defun toggle-visual-wrap ()
   (interactive)
   (if (bound-and-true-p visual-line-mode)
@@ -102,6 +107,7 @@ This command does not push text to `kill-ring'."
 (global-set-key "\C-cw" 'toggle-visual-wrap)
 
 ;; undo fill paragraph
+
 (defun undo-fill-paragraph ()
   "fill individual paragraphs with large fill column"
   (interactive)
@@ -111,6 +117,7 @@ This command does not push text to `kill-ring'."
 (global-set-key "\M-Q" 'undo-fill-paragraph)
 
 ;; magnify text for presentations
+
 (defun magnify ()
   "Large text for presentations"
   (interactive)
@@ -122,14 +129,14 @@ This command does not push text to `kill-ring'."
   (set-face-attribute 'default (selected-frame) :height my-font-height))
 
 ;; sum numbers in region
+
 (require 'cl-lib)
+
 (defun sum-numbers-in-region (start end)
   (interactive "r")
-  (message "%s"
-           (cl-reduce #'+
-                      (split-string (buffer-substring start
-                                                      end))
-                      :key #'string-to-number)))
+  (message "%s" (cl-reduce #'+ (split-string (buffer-substring start end)) :key #'string-to-number)))
+
+;; increment/decrement number under point
 
 (defun increment-number-at-point ()
       (interactive)
@@ -147,14 +154,3 @@ This command does not push text to `kill-ring'."
 
 (global-set-key (kbd "M-n") 'increment-number-at-point)
 (global-set-key (kbd "M-p") 'decrement-number-at-point)
-
-(global-set-key (kbd "C-<tab>") 'dabbrev-expand)
-(define-key minibuffer-local-map (kbd "C-<tab>") 'dabbrev-expand)
-
-(defalias 'q 'kill-emacs)
-
-(global-set-key (kbd "\C-c1") 'delete-trailing-whitespace)
-
-(global-set-key (kbd "\C-c2") 'align-regexp)
-
-(global-set-key (kbd "\C-c3") 'indent-tabs-mode)

@@ -145,6 +145,3 @@
 
 ;; enable upcase function to avoid interactive question in each new emacs session
 (put 'upcase-region 'disabled nil)
-
-;; enable visual-fill-column mode for writing text documents without hard wrapping
-(require 'visual-fill-column)
