@@ -1,5 +1,5 @@
 ;;
-;; mac
+;; macos
 ;;
 
 ;; command key as meta
@@ -9,5 +9,5 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-(defun mac-ui-dark-mode ()
+(defun macos-ui-dark-mode ()
   (string= (string-trim (shell-command-to-string "defaults read -g AppleInterfaceStyle")) "Dark"))

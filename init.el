@@ -2,7 +2,7 @@
 ;; init
 ;;
 
-;; load-relative
+;; bootstrap load-relative package
 
 (package-initialize)
 
@@ -14,21 +14,18 @@
 
 (require 'load-relative)
 
+;; platform specifics
+
+(when (string= system-type "gnu/linux") (load-relative "./linux"))
+(when (string= system-type "darwin") (load-relative "./macos"))
+(when (string= system-type "windows-nt") (load-relative "./windows"))
+
 ;; load core scripts
 
-(load-relative "./base")
+(load-relative "./frame")
+(load-relative "./themes")
+(load-relative "./general")
 (load-relative "./packages")
 (load-relative "./codestyle")
 (load-relative "./functions")
 (load-relative "./shortcuts")
-
-;; load theme
-
-(when (uname "Darwin")
-  (load-relative "./mac")
-  (if (mac-ui-dark-mode)
-    (load-relative "./display.nite")
-  (load-relative "./display.lite")))
-
-(when (uname "Linux")
-  (load-relative "./display.nite"))

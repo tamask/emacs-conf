@@ -2,10 +2,16 @@
 ;; functions
 ;;
 
-;; determine platform
+;; center frame
 
-(defun uname (platform)
-  (string= (string-trim (shell-command-to-string "uname")) platform))
+(defun frame-recenter (&optional frame)
+  "Center FRAME on the screen.
+FRAME can be a frame name, a terminal name, or a frame.
+If FRAME is omitted or nil, use currently selected frame."
+  (interactive)
+  (unless (eq 'maximised (frame-parameter nil 'fullscreen))
+    (modify-frame-parameters
+     frame '((user-position . t) (top . 0.5) (left . 0.5)))))
 
 ;; deleting without adding to kill-ring
 
@@ -56,8 +62,6 @@ This command does not push text to `kill-ring'."
 
 
 ;; rename buffers to <filename>:<parent-dir>
-
-(require 'eshell)
 
 (defun rename-buffer-with-directory-postfix ()
   (interactive)
@@ -135,10 +139,9 @@ This command does not push text to `kill-ring'."
 
 ;; sum numbers in region
 
-(require 'cl-lib)
-
-(defun sum-numbers-in-region (start end)
+(defun sum-numbers-region (start end)
   (interactive "r")
+  (require 'cl-lib)
   (message "%s" (cl-reduce #'+ (split-string (buffer-substring start end)) :key #'string-to-number)))
 
 ;; increment/decrement number under point

@@ -1,73 +1,40 @@
-;;
-;; display
-;;
+(defun theme-night ()
+  (interactive)
 
-(when window-system
-  ;; variables
-  (let ((my-font-family "monospace")) (boundp 'my-font))
-  (let ((my-font-height 100)) (boundp 'my-font-height))
-  (let ((my-font-height 100)) (boundp 'my-font-height))
-  (let ((my-frame-top 30)) (boundp 'my-frame-top))
-  (let ((my-frame-left 200)) (boundp 'my-frame-left))
-  (let ((my-frame-width 100)) (boundp 'my-frame-width))
-  (let ((my-frame-height 40)) (boundp 'my-frame-height))
+  (let ((my-config ())) (boundp 'my-config))
 
-  ;; core colors
+  (setq theme-font-family (alist-get 'font-family my-config "monospace"))
+  (setq theme-font-height (alist-get 'font-height my-config 100))
 
-  (setq my-fgcolor "#cccccc")
-  (setq my-bgcolor "#202020")
-  ;;(setq my-maincolor "cadetblue2")
-  ;;(setq my-maincolor "#97a4ef")
-  ;; (setq my-maincolor "#9fadfc")
-  (setq my-maincolor "#b0bcfc")
-  (setq my-auxcolor "#ff9595")
-  (setq my-hilite "#364b4f")
-  (setq my-stringcolor "#ff9595")
-
-  ;; default frame attributes and initial position
-  (setq my-frame-alist `
-        ((width . ,my-frame-width)
-         (height . ,my-frame-height)))
+  (setq theme-foreground "#cccccc")
+  (setq theme-background "#202020")
+  (setq theme-accent "#b0bcfc")
+  (setq theme-second "#ff9595")
+  (setq theme-highlight "#364b4f")
+  (setq theme-string "#ff9595")
 
   ;; ansi term
   (setq ansi-term-color-vector
         [nil "#000000" "#ffa965" "#42ffb6" "#fff485"
              "#93Ceff" "#ffa3CC" "#aeffff"])
 
-  ;; You can specify geometry-related options for the initial frame,
-  ;; however they won't take effect until Emacs reads `.emacs', which
-  ;; happens after first creating the frame. Therefore, set the selected
-  ;; frame's position instead.
-  (setq default-frame-alist (append my-frame-alist default-frame-alist))
-  (set-frame-position (selected-frame) my-frame-left my-frame-top)
-  (set-frame-size (selected-frame) my-frame-width my-frame-height)
-
-  ;; no scrollbars
-  (set-scroll-bar-mode nil)
-
-  ;; hide toolbar
-  (tool-bar-mode -1)
-
-  ;; hide menubar
-  (menu-bar-mode -1)
-
   (custom-set-faces
    ;; basic
 
    `(default
-     ((t (:family ,my-font-family :height ,my-font-height :background ,my-bgcolor :foreground ,my-fgcolor))))
+     ((t (:family ,theme-font-family :height ,theme-font-height :background ,theme-background :foreground ,theme-foreground))))
 
    `(error
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,theme-accent :weight normal))))
 
    `(variable-pitch
-     ((t (:family ,my-font-family))))
+     ((t (:family ,theme-font-family))))
 
    `(fixed-pitch
-     ((t (:family ,my-font-family))))
+     ((t (:family ,theme-font-family))))
 
    `(fixed-pitch-serif
-     ((t (:family ,my-font-family))))
+     ((t (:family ,theme-font-family))))
 
    `(border
      ((t (:background "grey"))))
@@ -76,16 +43,16 @@
      ((t (:foreground "#191919"))))
 
    `(fringe
-     ((t (:background ,my-bgcolor :foreground "#777777"))))
+     ((t (:background ,theme-background :foreground "#777777"))))
 
    `(cursor
-     ((t (:background ,my-fgcolor :foreground "black"))))
+     ((t (:background ,theme-foreground :foreground "black"))))
 
    `(highlight
-     ((t (:background ,my-maincolor :foreground "black"))))
+     ((t (:background ,theme-accent :foreground "black"))))
 
    `(match
-     ((t (:background ,my-hilite :foreground ,my-maincolor))))
+     ((t (:background ,theme-highlight :foreground ,theme-accent))))
 
    `(lazy-highlight
      ((t (:background "skyblue4"))))
@@ -94,25 +61,25 @@
      ((t (:foreground "grey40"))))
 
    `(show-paren-match
-     ((t (:background ,my-auxcolor :foreground "brown4"))))
+     ((t (:background ,theme-second :foreground "brown4"))))
 
    `(show-paren-mismatch
-     ((t (:background "dimgrey" :foreground ,my-bgcolor))))
+     ((t (:background "dimgrey" :foreground ,theme-background))))
 
    `(tooltip
-     ((t (:background ,my-bgcolor :foreground ,my-fgcolor))))
+     ((t (:background ,theme-background :foreground ,theme-foreground))))
 
    `(region
-     ((t (:background ,my-hilite))))
+     ((t (:background ,theme-highlight))))
 
    `(header-line
-     ((t (:background ,my-bgcolor :foreground "grey"))))
+     ((t (:background ,theme-background :foreground "grey"))))
 
    `(isearch
      ((t (:background "palevioletred1" :foreground "brown4"))))
 
    `(link
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(link-visited
      ((t (:foreground "wheat"))))
@@ -123,7 +90,7 @@
    ;; modeline
 
    `(mode-line
-     ((t (:box nil :background "grey20" :foreground ,my-fgcolor))))
+     ((t (:box nil :background "grey20" :foreground ,theme-foreground))))
 
    `(mode-line-highlight
      ((t (:box nil :background "grey25"))))
@@ -134,7 +101,7 @@
    ;; compilation
 
    `(compilation-mode-line-exit
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,theme-accent :weight normal))))
 
    `(compilation-mode-line-run
      ((t (:foreground "khaki" :weight normal))))
@@ -154,10 +121,10 @@
    ;; dired
 
    `(dired-header
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(dired-directory
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(dired-flagged
      ((t (:foreground "#ff9595" :weight normal))))
@@ -165,7 +132,7 @@
    ;; minibuffer
 
    `(minibuffer-prompt
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    ;; basic text
 
@@ -173,39 +140,39 @@
      ((t (:background "palevioletred1"))))
 
    `(escape-glyph
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(glyphless-char
-     ((t (:height ,my-font-height))))
+     ((t (:height ,theme-font-height))))
 
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(font-lock-comment-face
      ((t (:foreground "dimgrey" :slant italic))))
 
    `(font-lock-string-face
-     ((t (:foreground ,my-stringcolor))))
+     ((t (:foreground ,theme-string))))
 
    `(font-lock-builtin-face
-     ((t (:foreground ,my-maincolor :weight normal))))
+     ((t (:foreground ,theme-accent :weight normal))))
 
    `(font-lock-constant-face
-     ((t (:foreground ,my-fgcolor :weight normal))))
+     ((t (:foreground ,theme-foreground :weight normal))))
 
    `(font-lock-function-name-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,theme-foreground))))
 
    `(font-lock-keyword-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(font-lock-variable-name-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,theme-foreground))))
 
    `(font-lock-preprocessor-face
-     ((t (:foreground ,my-maincolor :inherit nil))))
+     ((t (:foreground ,theme-accent :inherit nil))))
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
@@ -222,7 +189,7 @@
      ((t (:weight normal :height unspecified :weight bold :underline t))))
 
    `(info-node
-     ((t (:weight normal :slant normal :foreground ,my-maincolor))))
+     ((t (:weight normal :slant normal :foreground ,theme-accent))))
 
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
@@ -233,31 +200,31 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground ,my-maincolor))))
+     ((t (:weight normal :foreground ,theme-accent))))
 
    `(markdown-header-face-1
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-2
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-3
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-4
-     ((t (:height unspecified :foreground ,my-maincolor))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground ,my-maincolor))))
+     ((t (:underline t :foreground ,theme-accent))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground ,my-maincolor))))
+     ((t (:slant italic :foreground ,theme-accent))))
 
    `(markdown-bold-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,theme-foreground))))
 
    `(markdown-italic-face
-     ((t (:foreground ,my-fgcolor))))
+     ((t (:foreground ,theme-foreground))))
 
    `(markdown-inline-code-face
      ((t (:foreground "#ff9595"))))
@@ -266,10 +233,10 @@
      ((t (:foreground "#ff9595"))))
 
    `(markdown-url-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(markdown-link-face
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    ;; iswitchb
 
@@ -277,7 +244,7 @@
      ((t (:foreground "khaki"))))
 
    `(iswitchb-single-match
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    ;; ido
 
@@ -285,7 +252,7 @@
      ((t (:foreground "khaki"))))
 
    `(ido-only-match
-     ((t (:foreground ,my-maincolor))))
+     ((t (:foreground ,theme-accent))))
 
    `(ido-indicator
      ((t (:foreground "tomato" :background nil))))
@@ -305,7 +272,7 @@
      ((t (:background unspecified :foreground "dimgrey"))))
 
    `(diff-index
-     ((t (:background unspecified :foreground ,my-fgcolor))))
+     ((t (:background unspecified :foreground ,theme-foreground))))
 
    `(diff-indicator-added
      ((t (:foreground "yellowgreen"))))
@@ -331,7 +298,7 @@
      ((t (:box nil :background "skyblue4" :foreground "beige"))))
 
    `(custom-button-pressed
-     ((t (:box nil :background ,my-maincolor :foreground "brown4"))))
+     ((t (:box nil :background ,theme-accent :foreground "brown4"))))
 
    `(custom-group-tag
      ((t (:height unspecified))))
@@ -354,5 +321,5 @@
 
    `(bookmark-face
      ((t (:background unspecified :foreground "dimgrey"))))
-   )
-)
+
+   ))
