@@ -3,8 +3,8 @@
 ;;
 
 (when window-system
-  (load-relative "./theme.light")
-  (load-relative "./theme.night")
+  (load-relative "./theme-light")
+  (load-relative "./theme-night")
 )
 
 (defun theme-dark-mode ()
