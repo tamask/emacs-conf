@@ -162,3 +162,19 @@ This command does not push text to `kill-ring'."
 
 (global-set-key (kbd "M-n") 'increment-number-at-point)
 (global-set-key (kbd "M-p") 'decrement-number-at-point)
+
+;; swap left and right buffers
+
+(defun win-swap ()
+  "Swap windows using buffer-move.el"
+  (interactive)
+  (use-package buffer-move
+    :straight
+    (buffer-move
+     :type git
+     :host github
+     :repo "lukhas/buffer-move"))
+  (if (null (windmove-find-other-window 'right))
+      (buf-move-left) (buf-move-right)))
+
+(global-set-key (kbd "\C-c TAB") 'win-swap)
