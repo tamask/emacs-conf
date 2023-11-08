@@ -156,3 +156,5 @@ This command does not push text to `kill-ring'."
 (global-set-key (kbd "\C-c1") 'delete-trailing-whitespace)
 
 (global-set-key (kbd "\C-c2") 'align-regexp)
+
+(global-set-key (kbd "\C-c3") 'indent-tabs-mode)
