@@ -36,6 +36,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; display tab characters as 4 spaces
+(setq-default tab-width 4)
 (setq default-tab-width 4)
 
 ;; indentation width
@@ -98,9 +99,6 @@
 
 (ido-mode `buffer)
 
-;; sgml
-(setq sgml-basic-offset 4)
-
 ;; initial scratch message
 (setq initial-scratch-message "")
 
@@ -129,11 +127,6 @@
 (setq mode-require-final-newline nil)
 (setq require-final-newline nil)
 
-;; global code styling
-(setq c-default-style "gnu")
-(setq default-tab-width 2)
-(setq js-indent-level 2)
-
 ;; stop annoying autosave
 (setq auto-save-default nil)
 
@@ -149,3 +142,9 @@
 
 ;; disable annoying bell sound
 (setq ring-bell-function 'ignore)
+
+;; enable upcase function to avoid interactive question in each new emacs session
+(put 'upcase-region 'disabled nil)
+
+;; enable visual-fill-column mode for writing text documents without hard wrapping
+(require 'visual-fill-column)

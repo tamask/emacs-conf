@@ -11,8 +11,6 @@
   (let ((my-frame-left 200)) (boundp 'my-frame-left))
   (let ((my-frame-width 100)) (boundp 'my-frame-width))
   (let ((my-frame-height 40)) (boundp 'my-frame-height))
-  (let ((my-bgcolor "#202020")) (boundp 'my-bgcolor))
-  (let ((my-fgcolor "gainsboro")) (boundp 'my-fgcolor))
 
   ;; core colors
 
@@ -96,7 +94,7 @@
      ((t (:foreground "grey40"))))
 
    `(show-paren-match
-     ((t (:background ,my-maincolor :foreground "brown4"))))
+     ((t (:background ,my-auxcolor :foreground "brown4"))))
 
    `(show-paren-mismatch
      ((t (:background "dimgrey" :foreground ,my-bgcolor))))

@@ -3,6 +3,12 @@
 ;;
 
 (when window-system
+  ;; colors
+  (setq my-fgcolor "black")
+  (setq my-bgcolor "#eeeeee")
+  (setq my-accent "#6865dd")
+  (setq my-second "deep pink")
+
   ;; variables
   (let ((my-font-family "monospace")) (boundp 'my-font))
   (let ((my-font-height 100)) (boundp 'my-font-height))
@@ -33,15 +39,6 @@
 
   ;; hide menubar
   (menu-bar-mode -1)
-
-  ;; colors
-
-  (setq my-fgcolor "black")
-  (setq my-bgcolor "#eeeeee")
-  ;; (setq my-second "blue")
-  ;; (setq my-accent "#5500ff")
-  (setq my-accent "#6865dd")
-  (setq my-second "deep pink")
 
   ;; basic
 

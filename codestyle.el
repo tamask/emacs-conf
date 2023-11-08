@@ -1,8 +1,12 @@
-;; (add-hook 'csharp-mode-hook (lambda () (setq comment-start "/*" comment-end "*/")))
+;; (setq c-default-style "gnu")
 
-(setq nxml-child-indent 4 nxml-attribute-indent 4)
+(setq default-tab-width 4)
+
+(setq sgml-basic-offset 4)
 
 (setq js-indent-level 4)
+
+(setq nxml-child-indent 4 nxml-attribute-indent 4)
 
 (add-hook 'html-mode-hook (lambda () (set (make-local-variable 'sgml-basic-offset) 4)))
 
@@ -19,3 +23,5 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 (add-hook 'csharp-mode-hook 'my-c-mode-hook)
+
+;; (add-hook 'csharp-mode-hook (lambda () (setq comment-start "/*" comment-end "*/")))
