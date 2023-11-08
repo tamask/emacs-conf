@@ -44,3 +44,9 @@
 
 (load-relative "./godot")
 (load-relative "./unity")
+
+;; daemon (for godot etc)
+
+(require 'server)
+(if (not (server-running-p)) (server-start))
+(add-to-list 'command-switch-alist '("(raise-frame)" . (lambda (s))))
