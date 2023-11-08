@@ -2,6 +2,11 @@
 ;; functions
 ;;
 
+;; determine platform
+
+(defun uname (platform)
+  (string= (string-trim (shell-command-to-string "uname")) platform))
+
 ;; deleting without adding to kill-ring
 
 (defun my-delete-word (arg)

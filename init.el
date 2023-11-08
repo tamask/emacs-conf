@@ -22,8 +22,13 @@
 (load-relative "./functions")
 (load-relative "./shortcuts")
 
-(when (string= (string-trim (shell-command-to-string "uname")) "Darwin")
+;; load theme
+
+(when (uname "Darwin")
   (load-relative "./mac")
   (if (mac-ui-dark-mode)
     (load-relative "./display.nite")
   (load-relative "./display.lite")))
+
+(when (uname "Linux")
+  (load-relative "./display.nite"))
