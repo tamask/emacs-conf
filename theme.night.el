@@ -19,10 +19,14 @@
              "#93Ceff" "#ffa3CC" "#aeffff"])
 
   (custom-set-faces
+
    ;; basic
 
    `(default
-     ((t (:family ,theme-font-family :height ,theme-font-height :background ,theme-background :foreground ,theme-foreground))))
+     ((t ( :family ,theme-font-family
+           :height ,theme-font-height
+           :foreground ,theme-foreground
+           :background ,theme-background))))
 
    `(error
      ((t (:foreground ,theme-accent :weight normal))))

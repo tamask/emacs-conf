@@ -11,137 +11,6 @@
   (setq theme-accent "#6865dd")
   (setq theme-second "deep pink")
 
-  ;; basic
-
-  (set-face-attribute
-   'default nil
-   :family theme-font-family :height theme-font-height
-   :background theme-background :foreground theme-foreground)
-
-  (set-face-attribute
-   'variable-pitch nil :family theme-font-family)
-
-  (set-face-attribute
-   'fixed-pitch nil :family theme-font-family)
-
-  (set-face-attribute
-   'border nil :background "grey")
-
-  (set-face-attribute
-   'vertical-border nil :foreground "#cccccc")
-
-  (set-face-attribute
-   'fringe nil :background theme-background :foreground "#777777")
-
-  (set-face-attribute
-   'cursor nil :background theme-foreground :foreground "black")
-
-  (set-face-attribute
-   'highlight nil :background theme-second :foreground "white")
-
-  (set-face-attribute
-   'match nil :background "#dddddd" :foreground "black")
-
-  (set-face-attribute
-   'shadow nil :foreground "grey40")
-
-  (set-face-attribute
-   'show-paren-match nil :background theme-second :foreground "white")
-
-  (set-face-attribute
-   'show-paren-mismatch nil :background "red" :foreground "white")
-
-  (set-face-attribute
-   'tooltip nil :background theme-background :foreground theme-foreground)
-
-  (set-face-attribute
-   'region nil :background "#ffffbb")
-
-  (set-face-attribute
-   'header-line nil :background theme-background :foreground "grey")
-
-  (set-face-attribute
-   'isearch nil :background "palevioletred1" :foreground "brown4")
-
-  (set-face-attribute
-   'lazy-highlight nil :background "yellow" :foreground "firebrick")
-
-  (set-face-attribute
-   'link nil :foreground theme-accent)
-
-  (set-face-attribute
-   'link-visited nil :foreground "#888888")
-
-  ;; dired
-
-  (set-face-attribute
-   'dired-header nil :foreground theme-second)
-
-  (set-face-attribute
-   'dired-directory nil :foreground theme-accent)
-
-  ;; modeline
-
-  (set-face-attribute
-   'mode-line nil :background "white" :foreground theme-accent :box 'unspecified)
-
-  (set-face-attribute
-   'mode-line-highlight nil :background theme-accent :foreground "white" :box 'unspecified)
-
-  (set-face-attribute
-   'mode-line-inactive nil :background "white" :foreground "honeydew3" :box 'unspecified)
-
-  (set-face-attribute
-   'mode-line-highlight nil)
-
-  ;; minibuffer
-
-  (set-face-attribute
-   'minibuffer-prompt nil :foreground theme-second)
-
-  ;; basic text
-
-  (set-face-attribute
-   'trailing-whitespace nil :background "#675e46")
-
-  (set-face-attribute
-   'escape-glyph nil :foreground theme-second)
-
-  ;; font-lock
-
-  (set-face-attribute
-   'font-lock-comment-face nil :foreground "#ababab" :slant 'italic)
-
-  (set-face-attribute
-   'font-lock-string-face nil :foreground theme-second)
-
-  (set-face-attribute
-   'font-lock-builtin-face nil :foreground theme-accent) ;; :foreground theme-foreground :weight 'bold)
-
-  (set-face-attribute
-   'font-lock-constant-face nil :foreground theme-accent) ;; :foreground theme-foreground :weight 'bold)
-
-  (set-face-attribute
-   'font-lock-function-name-face nil :foreground 'unspecified)
-
-  (set-face-attribute
-   'font-lock-keyword-face nil :foreground theme-accent)
-
-  (set-face-attribute
-   'font-lock-type-face nil :foreground theme-accent)
-
-  (set-face-attribute
-   'font-lock-variable-name-face nil :foreground theme-foreground)
-
-  ;; (set-face-attribute
-  ;;  'font-lock-variable-name-face nil :foreground nil :inherit nil)
-
-  (set-face-attribute
-   'font-lock-preprocessor-face nil :foreground theme-accent :inherit nil)
-
-  (set-face-attribute
-   'font-lock-warning-face nil :foreground "orangered" :weight 'normal)
-
   ;; ansi term
 
   (setq ansi-term-color-vector
@@ -151,6 +20,141 @@
   ;; using customize for lazy-loaded modes
 
   (custom-set-faces
+
+   ;; basic
+
+   `(default
+     ((t ( :family ,theme-font-family
+           :height ,theme-font-height
+           :foreground ,theme-foreground
+           :background ,theme-background))))
+
+   `(variable-pitch
+     ((t (:family ,theme-font-family))))
+
+   `(fixed-pitch
+     ((t (:family ,theme-font-family))))
+
+   `(border
+     ((t (:background "grey"))))
+
+   `(vertical-border
+     ((t (:foreground "#cccccc"))))
+
+   `(fringe
+     ((t (:background ,theme-background :foreground "#777777"))))
+
+   `(cursor
+     ((t (:background ,theme-foreground :foreground "black"))))
+
+   `(highlight
+     ((t (:background ,theme-second :foreground "white"))))
+
+   `(match
+     ((t (:background "#dddddd" :foreground "black"))))
+
+   `(shadow
+     ((t (:foreground "grey40"))))
+
+   `(show-paren-match
+     ((t (:background ,theme-second :foreground "white"))))
+
+   `(show-paren-mismatch
+     ((t (:background "red" :foreground "white"))))
+
+   `(tooltip
+     ((t (:background ,theme-background :foreground ,theme-foreground))))
+
+   `(region
+     ((t (:background "#ffffbb"))))
+
+   `(header-line
+     ((t (:background ,theme-background :foreground "grey"))))
+
+   `(isearch
+     ((t (:background "palevioletred1" :foreground "brown4"))))
+
+   `(lazy-highlight
+     ((t (:background "yellow" :foreground "firebrick"))))
+
+   `(link
+     ((t (:foreground ,theme-accent))))
+
+   `(link-visited
+     ((t (:foreground "#888888"))))
+
+   ;; dired
+
+   `(dired-header
+     ((t (:foreground ,theme-second))))
+
+   `(dired-directory
+     ((t (:foreground ,theme-accent))))
+
+   ;; modeline
+
+   `(mode-line
+     ((t (:background "white" :foreground ,theme-accent :box unspecified))))
+
+   `(mode-line-highlight
+     ((t (:background ,theme-accent :foreground "white" :box unspecified))))
+
+   `(mode-line-inactive
+     ((t (:background "white" :foreground "honeydew3" :box unspecified))))
+
+   `(mode-line-highlight
+     ((t ())))
+
+   ;; minibuffer
+
+   `(minibuffer-prompt
+     ((t (:foreground ,theme-second))))
+
+   ;; basic text
+
+   `(trailing-whitespace
+     ((t (:background "#675e46"))))
+
+   `(escape-glyph
+     ((t (:foreground ,theme-second))))
+
+   ;; font-lock
+
+   `(font-lock-comment-face
+     ((t (:foreground "#ababab" :slant italic))))
+
+   `(font-lock-string-face
+     ((t (:foreground ,theme-second))))
+
+   `(font-lock-builtin-face
+     ((t (:foreground ,theme-accent))))
+
+   `(font-lock-constant-face
+     ((t (:foreground ,theme-accent))))
+
+   `(font-lock-function-name-face
+     ((t (:foreground unspecified))))
+
+   `(font-lock-keyword-face
+     ((t (:foreground ,theme-accent))))
+
+   `(font-lock-type-face
+     ((t (:foreground ,theme-accent))))
+
+   `(font-lock-variable-name-face
+     ((t (:foreground ,theme-foreground))))
+
+   ;; `(font-lock-variable-name-face
+   ;;   ((t (:foreground nil :inherit nil))))
+
+   `(font-lock-preprocessor-face
+     ((t (:foreground ,theme-accent :inherit nil))))
+
+   `(font-lock-warning-face
+     ((t (:foreground "orangered" :weight normal))))
+
+   ;; erc
+
    `(erc-prompt-face
      ((t (:background unspecified :foreground ,theme-second :weight normal))))
 
