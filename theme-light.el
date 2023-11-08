@@ -153,120 +153,6 @@
    `(font-lock-warning-face
      ((t (:foreground "orangered" :weight normal))))
 
-   ;; erc
-
-   `(erc-prompt-face
-     ((t (:background unspecified :foreground ,theme-second :weight normal))))
-
-   `(erc-notice-face
-     ((t (:foreground "orangered" :weight normal))))
-
-   `(erc-direct-msg-face
-     ((t (:foreground "white" :weight normal :slant italic))))
-
-   `(erc-error-face
-     ((t (:foreground "#aa0000" :weight normal))))
-
-   `(erc-timestamp-face
-     ((t (:foreground ,theme-second :weight normal))))
-
-   `(erc-nick-msg-face
-     ((t (:foreground "orangered"))))
-
-   `(erc-theme-nick-face
-     ((t (:foreground ,theme-foreground))))
-
-   `(erc-current-nick-face
-     ((t (:foreground unspecified))))
-
-   `(erc-input-face
-     ((t (:foreground "#fff9bc"))))
-
-   ;; gnus
-
-   `(gnus-header-name
-     ((t (:foreground ,theme-second))))
-
-   `(gnus-header-content
-     ((t (:foreground ,theme-foreground :slant normal))))
-
-   `(gnus-header-from
-     ((t (:foreground ,theme-foreground))))
-
-   `(gnus-header-subject
-     ((t (:foreground ,theme-foreground))))
-
-   `(gnus-summary-cancelled
-     ((t (:background ,theme-background :foreground "#777777"))))
-
-   `(gnus-summary-normal-read
-     ((t (:foreground "orangered" :weight normal))))
-
-   `(gnus-summary-normal-unread
-     ((t (:foreground ,theme-second))))
-
-   `(gnus-summary-normal-ancient
-     ((t (:foreground ,theme-foreground))))
-
-   `(gnus-summary-normal-ticked
-     ((t (:foreground "yellow"))))
-
-   `(gnus-summary-low-read
-     ((t (:foreground "orangered"))))
-
-   `(gnus-summary-low-unread
-     ((t (:foreground ,theme-second))))
-
-   `(gnus-summary-low-ancient
-     ((t (:foreground ,theme-foreground))))
-
-   `(gnus-summary-low-ticked
-     ((t (:foreground "yellow"))))
-
-   `(gnus-summary-high-read
-     ((t (:foreground "orangered"))))
-
-   `(gnus-summary-high-unread
-     ((t (:foreground ,theme-second))))
-
-   `(gnus-summary-high-ancient
-     ((t (:foreground ,theme-foreground))))
-
-   `(gnus-summary-high-ticked
-     ((t (:foreground "yellow"))))
-
-   `(gnus-summary-selected
-     ((t (:underline unspecified :foreground ,theme-second))))
-
-   ;; mail message
-
-   `(message-header-name
-     ((t (:foreground ,theme-second))))
-
-   `(message-header-to
-     ((t (:foreground ,theme-foreground :weight normal))))
-
-   `(message-header-subject
-     ((t (:foreground ,theme-foreground))))
-
-   `(message-header-other
-     ((t (:foreground ,theme-foreground))))
-
-   `(message-header-xheader
-     ((t (:foreground ,theme-foreground))))
-
-   `(message-header-cc
-     ((t (:foreground ,theme-foreground))))
-
-   `(message-header-newsgroups
-     ((t (:foreground ,theme-foreground))))
-
-   `(message-cited-text
-     ((t (:foreground "orangered"))))
-
-   `(message-separator
-     ((t (:foreground "#777777"))))
-
    ;; info reader
 
    `(info-title-1
@@ -354,11 +240,6 @@
    `(table-cell
      ((t (:foreground ,theme-foreground :background "#333333"))))
 
-   ;; django html mode
-
-   `(django-html-font-lock-keywords
-     ((t (:foreground "tomato"))))
-
    ;; diff mode
 
    `(diff-file-header
@@ -389,26 +270,6 @@
      ((t (:foreground "orangered"))))
 
    `(diff-refine-change
-     ((t (:background unspecified))))
-
-   ;; rst
-
-   `(rst-level-1-face
-     ((t (:background unspecified))))
-
-   `(rst-level-2-face
-     ((t (:background unspecified))))
-
-   `(rst-level-3-face
-     ((t (:background unspecified))))
-
-   `(rst-level-4-face
-     ((t (:background unspecified))))
-
-   `(rst-level-5-face
-     ((t (:background unspecified))))
-
-   `(rst-level-6-face
      ((t (:background unspecified))))
 
    ))
