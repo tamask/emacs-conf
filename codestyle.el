@@ -1,4 +1,4 @@
-;; (setq c-default-style "gnu")
+(setq c-default-style "stroustrup")
 
 (setq default-tab-width 4)
 
