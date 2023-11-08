@@ -204,7 +204,7 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground ,theme-accent))))
+     ((t (:height unspecified :weight normal :foreground ,theme-accent))))
 
    `(markdown-header-face-1
      ((t (:height unspecified :foreground ,theme-accent))))
@@ -219,22 +219,22 @@
      ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground ,theme-accent))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground ,theme-accent))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-bold-face
-     ((t (:foreground ,theme-foreground))))
+     ((t (:foreground ,theme-foreground :weight bold))))
 
    `(markdown-italic-face
-     ((t (:foreground ,theme-foreground))))
+     ((t (:foreground ,theme-foreground :slant italic))))
 
    `(markdown-inline-code-face
-     ((t (:foreground "#ff9595"))))
+     ((t (:foreground "#fcd7b3"))))
 
    `(markdown-pre-face
-     ((t (:foreground "#ff9595"))))
+     ((t (:foreground "#fcd7b3"))))
 
    `(markdown-url-face
      ((t (:foreground ,theme-accent))))

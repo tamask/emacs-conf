@@ -178,43 +178,43 @@
    ;; markdown
 
    `(markdown-header-face
-     ((t (:weight normal :foreground ,theme-second))))
+     ((t (:height unspecified :weight normal :foreground ,theme-accent))))
 
    `(markdown-header-face-1
-     ((t (:height 260 :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-2
-     ((t (:height 220 :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-3
-     ((t (:height 180 :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-4
-     ((t (:height 140 :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-5
-     ((t (:underline t :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-header-face-6
-     ((t (:slant italic :foreground ,theme-second))))
+     ((t (:height unspecified :foreground ,theme-accent))))
 
    `(markdown-bold-face
-     ((t (:foreground ,theme-foreground))))
+     ((t (:foreground ,theme-foreground :weight bold))))
 
    `(markdown-italic-face
-     ((t (:foreground ,theme-foreground))))
+     ((t (:foreground ,theme-foreground :slant italic))))
 
    `(markdown-inline-code-face
-     ((t (:foreground "orangered"))))
+     ((t (:foreground "#33967a"))))
 
    `(markdown-pre-face
-     ((t (:foreground "orangered"))))
+     ((t (:foreground "#33967a"))))
 
    `(markdown-url-face
-     ((t (:foreground ,theme-second))))
+     ((t (:foreground ,theme-accent))))
 
    `(markdown-link-face
-     ((t (:foreground ,theme-second))))
+     ((t (:foreground ,theme-accent))))
 
    ;; iswitchb
 

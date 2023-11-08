@@ -63,3 +63,7 @@
 ;; for writing text documents without hard wrapping
 
 (use-package visual-fill-column)
+
+;; markdown
+
+(use-package markdown-mode :mode "\\.md\\'")
