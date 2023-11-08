@@ -1,6 +1,6 @@
 # emacs-conf
 
-Uses ELPA and `package` to bootstrap `load-relative` and `use-package` to set up everything else.
+Bootstraps `straight.el` and uses `use-package` from there on out.
 
 Basic initialization in `.emacs`:
 
