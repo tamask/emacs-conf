@@ -10,11 +10,6 @@
 
 ;; local site-lisp
 (setq load-path (append '("~/.site-lisp/" ) load-path))
-;; (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-;;     (let* ((my-lisp-dir "~/site-lisp/")
-;;            (default-directory my-lisp-dir))
-;;       (setq load-path (cons my-lisp-dir load-path))
-;;       (normal-top-level-add-subdirs-to-load-path)))
 
 ;; default major mode
 (setq default-major-mode 'text-mode)

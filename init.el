@@ -38,3 +38,9 @@
 (load-relative "./codestyle")
 (load-relative "./functions")
 (load-relative "./shortcuts")
+
+
+;; dev environments
+
+(load-relative "./godot")
+(load-relative "./unity")
