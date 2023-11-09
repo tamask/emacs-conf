@@ -153,6 +153,20 @@
    `(font-lock-warning-face
      ((t (:foreground "orangered" :weight normal))))
 
+   ;; company
+
+   `(company-tooltip
+     ((t (:background "white"))))
+
+   `(company-tooltip-selection
+     ((t (:background "aquamarine2"))))
+
+   `(company-tooltip-scrollbar-track
+     ((t (:background "#f8f8f8"))))
+
+   `(company-tooltip-scrollbar-thumb
+     ((t (:background "#dddddd"))))
+
    ;; info reader
 
    `(info-title-1

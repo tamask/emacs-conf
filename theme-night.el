@@ -6,7 +6,7 @@
   (setq theme-font-family (alist-get 'font-family my-config "monospace"))
   (setq theme-font-height (alist-get 'font-height my-config 100))
 
-  (setq theme-foreground "#cccccc")
+  (setq theme-foreground "#dddddd")
   (setq theme-background "#202020")
   (setq theme-accent "#b0bcfc")
   (setq theme-second "#ff9595")
@@ -180,6 +180,20 @@
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
+
+   ;; company
+
+   `(company-tooltip
+     ((t (:background "gray26"))))
+
+   `(company-tooltip-selection
+     ((t (:background "#4753a5"))))
+
+   `(company-tooltip-scrollbar-track
+     ((t (:background "gray28"))))
+
+   `(company-tooltip-scrollbar-thumb
+     ((t (:background "gray33"))))
 
    ;; info reader
 
