@@ -184,16 +184,16 @@
    ;; company
 
    `(company-tooltip
-     ((t (:background "gray26"))))
+     ((t (:background "#101010" :foreground "#999"))))
 
    `(company-tooltip-selection
-     ((t (:background "#4753a5"))))
+     ((t (:background "#123531" :foreground "#eee"))))
 
    `(company-tooltip-scrollbar-track
-     ((t (:background "gray28"))))
+     ((t (:background "#141414"))))
 
    `(company-tooltip-scrollbar-thumb
-     ((t (:background "gray33"))))
+     ((t (:background "#1a1a1a"))))
 
    ;; info reader
 
