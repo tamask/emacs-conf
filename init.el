@@ -23,6 +23,11 @@
 
 (use-package load-relative :straight t)
 
+;; utility functions used by config
+
+(defun plist-get-or-default (plist key default)
+  (if (plist-member plist key) (plist-get plist key) default))
+
 ;; platform specifics
 
 (when (string= system-type "gnu/linux") (load-relative "./linux"))
@@ -38,7 +43,6 @@
 (load-relative "./codestyle")
 (load-relative "./functions")
 (load-relative "./shortcuts")
-
 
 ;; dev environments
 

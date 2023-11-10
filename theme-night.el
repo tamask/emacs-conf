@@ -3,8 +3,8 @@
 
   (let ((my-config ())) (boundp 'my-config))
 
-  (setq theme-font-family (alist-get 'font-family my-config "monospace"))
-  (setq theme-font-height (alist-get 'font-height my-config 100))
+  (setq theme-font-family (plist-get-or-default my-config :font-family "monospace"))
+  (setq theme-font-height (plist-get-or-default my-config :font-height 100))
 
   (setq theme-foreground "#dddddd")
   (setq theme-background "#202020")

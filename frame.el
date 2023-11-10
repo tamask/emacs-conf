@@ -20,15 +20,15 @@
 
 (set-frame-size
  (selected-frame)
- (alist-get 'frame-width my-config 140)
- (alist-get 'frame-height my-config 35))
+ (plist-get-or-default my-config :frame-width 140)
+ (plist-get-or-default my-config :frame-height 35))
 
 ;; set global font settings that affect frame geometry
 
 (set-face-attribute
  'default nil
- :family (alist-get 'font-family my-config "monospace")
- :height (alist-get 'font-height my-config 100))
+ :family (plist-get-or-default my-config :font-family "monospace")
+ :height (plist-get-or-default my-config :font-height 100))
 
 ;; center initial frame on current display now that the font is set
 
