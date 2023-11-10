@@ -187,7 +187,7 @@
      ((t (:background "#101010" :foreground "#999"))))
 
    `(company-tooltip-selection
-     ((t (:background "#123531" :foreground "#eee"))))
+     ((t (:background "#48559F" :foreground "#eee"))))
 
    `(company-tooltip-scrollbar-track
      ((t (:background "#141414"))))
