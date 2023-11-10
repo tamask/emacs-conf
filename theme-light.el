@@ -326,4 +326,15 @@
    `(widget-single-line-field
      ((t (:box nil :background "#ddd"))))
 
+   ;; flymake
+
+   `(flymake-note
+     ((t (:foreground "#009062" :background "#D2ECE4" :underline unspecified))))
+
+   `(flymake-error
+     ((t (:foreground "#FF446B" :background "#FFE0DF" :underline unspecified))))
+
+   `(flymake-warning
+     ((t (:foreground "#AD6700" :background "#ffffbb" :underline unspecified))))
+
    ))

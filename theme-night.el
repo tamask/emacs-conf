@@ -346,4 +346,15 @@
    `(bookmark-face
      ((t (:background unspecified :foreground "dimgrey"))))
 
+   ;; flymake
+
+   `(flymake-note
+     ((t (:foreground "#57D88F" :background unspecified :underline unspecified))))
+
+   `(flymake-error
+     ((t (:foreground "#FF446B" :background unspecified :underline unspecified))))
+
+   `(flymake-warning
+     ((t (:foreground "#FFE386" :background unspecified :underline unspecified))))
+
    ))
