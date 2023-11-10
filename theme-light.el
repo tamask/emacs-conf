@@ -48,7 +48,7 @@
      ((t (:background ,theme-foreground :foreground "black"))))
 
    `(highlight
-     ((t (:background ,theme-second :foreground "white"))))
+     ((t (:background ,theme-accent :foreground "white"))))
 
    `(match
      ((t (:background "#dddddd" :foreground "black"))))
@@ -158,28 +158,37 @@
    `(company-tooltip
      ((t (:background "white"))))
 
+   `(company-tooltip-mouse
+     ((t (:background unspecified :foreground ,theme-accent))))
+
    `(company-tooltip-selection
      ((t (:background "aquamarine2"))))
 
    `(company-tooltip-scrollbar-track
-     ((t (:background "#f8f8f8"))))
+     ((t (:background "white"))))
 
    `(company-tooltip-scrollbar-thumb
-     ((t (:background "#dddddd"))))
+     ((t (:background "#f4f4f4"))))
 
    ;; info reader
 
    `(info-title-1
-     ((t (:weight normal :height 280 :foreground ,theme-second))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-title-2
-     ((t (:weight normal :height 240 :foreground ,theme-second))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-title-3
-     ((t (:weight normal :height 200 :foreground ,theme-second))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-node
-     ((t (:weight normal :slant normal :foreground ,theme-second))))
+     ((t (:weight normal :slant normal :foreground ,theme-accent))))
+
+   `(info-menu-header
+     ((t (:inherit unspecified :weight bold))))
+
+   `(Info-quoted ; not a typo
+     ((t (:family ,theme-font-family :foreground "#888"))))
 
    `(info-menu-star
      ((t (:foreground ,theme-second))))
@@ -285,5 +294,36 @@
 
    `(diff-refine-change
      ((t (:background unspecified))))
+
+   ;; customize
+
+   `(custom-button
+     ((t (:box nil :background "#fff" :foreground ,theme-foreground))))
+
+   `(custom-button-mouse
+     ((t (:box nil :background ,theme-accent :foreground "white"))))
+
+   `(custom-button-pressed
+     ((t (:box nil :background ,theme-second :foreground "white"))))
+
+   `(custom-group-tag
+     ((t (:height unspecified))))
+
+   `(custom-group-tag-1
+     ((t (:height unspecified))))
+
+   `(custom-visibility
+     ((t (:inherit 'link :height unspecified :underline t))))
+
+   `(custom-variable-tag
+     ((t (:inherit 'link))))
+
+   ;; widget
+
+   `(widget-field
+     ((t (:box nil :background "#ddd"))))
+
+   `(widget-single-line-field
+     ((t (:box nil :background "#ddd"))))
 
    ))

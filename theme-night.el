@@ -86,7 +86,7 @@
      ((t (:foreground ,theme-accent))))
 
    `(link-visited
-     ((t (:foreground "wheat"))))
+     ((t (:foreground "#7381ce"))))
 
    `(success
      ((t (:foreground "palegreen"))))
@@ -184,33 +184,39 @@
    ;; company
 
    `(company-tooltip
-     ((t (:background "#101010" :foreground "#999"))))
+     ((t (:background "#151515" :foreground "#999"))))
+
+   `(company-tooltip-mouse
+     ((t (:background unspecified :foreground "#fff"))))
 
    `(company-tooltip-selection
      ((t (:background "#48559F" :foreground "#eee"))))
 
    `(company-tooltip-scrollbar-track
-     ((t (:background "#141414"))))
+     ((t (:background "#151515"))))
 
    `(company-tooltip-scrollbar-thumb
-     ((t (:background "#1a1a1a"))))
+     ((t (:background "#1c1c1c"))))
 
    ;; info reader
 
    `(info-title-1
-     ((t (:weight normal :height unspecified :weight bold :underline t))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-title-2
-     ((t (:weight normal :height unspecified :weight bold :underline t))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-title-3
-     ((t (:weight normal :height unspecified :weight bold :underline t))))
+     ((t (:weight bold :height unspecified))))
 
    `(info-node
      ((t (:weight normal :slant normal :foreground ,theme-accent))))
 
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
+
+   `(Info-quoted ; not a type
+     ((t (:family ,theme-font-family :foreground "#888"))))
 
    `(info-menu-star
      ((t (:foreground unspecified))))
@@ -310,13 +316,13 @@
    ;; customize
 
    `(custom-button
-     ((t (:box nil :background "#444444" :foreground "beige"))))
+     ((t (:box nil :background "#333" :foreground "beige"))))
 
    `(custom-button-mouse
-     ((t (:box nil :background "skyblue4" :foreground "beige"))))
+     ((t (:box nil :background ,theme-accent :foreground "white"))))
 
    `(custom-button-pressed
-     ((t (:box nil :background ,theme-accent :foreground "brown4"))))
+     ((t (:box nil :background ,theme-accent :foreground "white"))))
 
    `(custom-group-tag
      ((t (:height unspecified))))
@@ -325,15 +331,15 @@
      ((t (:height unspecified))))
 
    `(custom-visibility
-     ((t (:height unspecified))))
+     ((t (:height unspecified :underline t))))
 
    ;; widget
 
    `(widget-field
-     ((t (:box nil :background "#444444"))))
+     ((t (:box nil :background "#151515"))))
 
    `(widget-single-line-field
-     ((t (:box nil :background "#444444"))))
+     ((t (:box nil :background "#151515"))))
 
    ;; bookmark
 

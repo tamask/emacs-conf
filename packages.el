@@ -26,7 +26,10 @@
 (use-package company
   :hook (prog-mode . company-mode)
   :bind ("C-;" . company-complete)
-  :config (setq company-idle-delay nil))
+  :config
+  (setq company-icon-margin 4)
+  (setq company-idle-delay nil)
+  (setq company-tooltip-width-grow-only t))
 
 ;; flymake
 
