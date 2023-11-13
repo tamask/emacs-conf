@@ -8,15 +8,22 @@
 
   (setq theme-foreground "#dddddd")
   (setq theme-background "#202020")
+
   (setq theme-accent "#b0bcfc")
   (setq theme-second "#ff9595")
+  (setq theme-third "#57d88f")
+
   (setq theme-highlight "#364b4f")
-  (setq theme-string "#ff9595")
+  (setq theme-error "#ff446b")
+  (setq theme-warning "#ffe386")
 
   ;; ansi term
+
   (setq ansi-term-color-vector
         [nil "#000000" "#ffa965" "#42ffb6" "#fff485"
              "#93Ceff" "#ffa3CC" "#aeffff"])
+
+  ;; using customize for lazy-loaded modes
 
   (custom-set-faces
 
@@ -29,7 +36,10 @@
            :background ,theme-background))))
 
    `(error
-     ((t (:foreground ,theme-accent :weight normal))))
+     ((t (:foreground ,theme-error :weight normal))))
+
+   `(warning
+     ((t (:foreground ,theme-warning :weight normal))))
 
    `(variable-pitch
      ((t (:family ,theme-font-family))))
@@ -158,7 +168,7 @@
      ((t (:foreground "dimgrey" :slant italic))))
 
    `(font-lock-string-face
-     ((t (:foreground ,theme-string))))
+     ((t (:foreground ,theme-second))))
 
    `(font-lock-builtin-face
      ((t (:foreground ,theme-accent :weight normal))))
@@ -349,12 +359,12 @@
    ;; flymake
 
    `(flymake-note
-     ((t (:foreground "#57D88F" :background unspecified :underline unspecified))))
+     ((t (:foreground "#57d88f" :background unspecified :underline unspecified))))
 
    `(flymake-error
-     ((t (:foreground "#FF446B" :background unspecified :underline unspecified))))
+     ((t (:foreground ,theme-error :background unspecified :underline unspecified))))
 
    `(flymake-warning
-     ((t (:foreground "#FFE386" :background unspecified :underline unspecified))))
+     ((t (:foreground ,theme-warning :background unspecified :underline unspecified))))
 
    ))

@@ -8,8 +8,14 @@
 
   (setq theme-foreground "black")
   (setq theme-background "#eeeeee")
+
   (setq theme-accent "#6865dd")
   (setq theme-second "deep pink")
+  (setq theme-third "#009062")
+
+  (setq theme-highlight "#ffffbb")
+  (setq theme-error "deep pink")
+  (setq theme-warning "#fc8749")
 
   ;; ansi term
 
@@ -28,6 +34,12 @@
            :height ,theme-font-height
            :foreground ,theme-foreground
            :background ,theme-background))))
+
+   `(error
+     ((t (:foreground ,theme-error :weight normal))))
+
+   `(warning
+     ((t (:foreground ,theme-warning :weight normal))))
 
    `(variable-pitch
      ((t (:family ,theme-font-family))))
@@ -329,12 +341,12 @@
    ;; flymake
 
    `(flymake-note
-     ((t (:foreground "#009062" :background "#D2ECE4" :underline unspecified))))
+     ((t (:foreground ,theme-third :background "#D2ECE4" :underline unspecified))))
 
    `(flymake-error
-     ((t (:foreground "#FF446B" :background "#FFE0DF" :underline unspecified))))
+     ((t (:foreground ,theme-error :background "#FFE0DF" :underline unspecified))))
 
    `(flymake-warning
-     ((t (:foreground "#AD6700" :background "#ffffbb" :underline unspecified))))
+     ((t (:foreground ,theme-warning :background "#ffffbb" :underline unspecified))))
 
    ))
