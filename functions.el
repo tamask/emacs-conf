@@ -178,3 +178,22 @@ This command does not push text to `kill-ring'."
       (buf-move-left) (buf-move-right)))
 
 (global-set-key (kbd "\C-c TAB") 'win-swap)
+
+;; evaluate ralgebraic expression in the region & replace with result
+
+(defun calc-eval-region-or-line ()
+  "Evaluate algebraic expression in the region and replace with
+ the result, or evaluate the line and insert the result on a new
+line"
+  (interactive)
+  (if (region-active-p)
+      (let* ((expr (buffer-substring-no-properties (region-beginning) (region-end)))
+             (result (calc-eval expr)))
+        (delete-region (region-beginning) (region-end))
+        (insert result))
+    (let* ((expr (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
+           (result (calc-eval expr)))
+      (newline-and-indent)
+      (insert result))))
+
+(global-set-key (kbd "\C-c RET") 'calc-eval-region-or-line)
