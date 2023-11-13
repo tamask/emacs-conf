@@ -70,3 +70,15 @@
 ;; markdown
 
 (use-package markdown-mode :mode "\\.md\\'")
+
+;; sass/scss
+
+(use-package scss-mode
+  :straight
+  (scss-mode
+   :type git
+   :host github
+   :repo "antonj/scss-mode")
+  :mode "\\.scss\\'"
+  :config
+  (setq scss-compile-at-save nil))
