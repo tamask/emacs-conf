@@ -2,25 +2,6 @@
 ;; packages
 ;;
 
-(setq
- package-list
- '(
-   load-relative
-   use-package
-   company
-   visual-fill-column
-   ))
-
-;; install the missing packages
-
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-;; use-package
-
-(require 'use-package)
-
 ;; company mode
 
 (use-package company
@@ -42,7 +23,7 @@
 ;; eglot
 
 (setq eldoc-echo-area-use-multiline-p nil)
-  
+
 (setq
  eglot-ignored-server-capabilities
  '(:documentOnTypeFormattingProvider
@@ -82,3 +63,17 @@
   :mode "\\.scss\\'"
   :config
   (setq scss-compile-at-save nil))
+
+;;
+;; deferred packages
+;;
+
+;; avoid loading these during initialization, but provide a
+;; convenience method/keybinding to load them on demand
+
+(defun use-multiple-cursors ()
+  (interactive)
+  (use-package multiple-cursors)
+  (message "multiple-cursors loaded"))
+
+(global-set-key (kbd "C-c C-x 1") 'use-multiple-cursors)

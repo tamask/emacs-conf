@@ -17,8 +17,6 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-use-package 'use-package)
-
 ;; bootstrap load-relative package
 
 (use-package load-relative :straight t)
