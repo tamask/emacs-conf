@@ -60,7 +60,6 @@ This command does not push text to `kill-ring'."
 (global-set-key (kbd "<M-backspace>") 'my-backward-delete-word)
 (global-set-key (kbd "<C-backspace>") 'my-backward-delete-word)
 
-
 ;; rename buffers to <filename>:<parent-dir>
 
 (defun rename-buffer-with-directory-postfix ()
@@ -124,18 +123,6 @@ This command does not push text to `kill-ring'."
     (fill-individual-paragraphs (point-min) (point-max))))
 
 (global-set-key "\M-Q" 'undo-fill-paragraph)
-
-;; magnify text for presentations
-
-(defun magnify ()
-  "Large text for presentations"
-  (interactive)
-  (set-face-attribute 'default (selected-frame) :height my-font-height-magnified))
-
-(defun demagnify ()
-  "Large text for presentations"
-  (interactive)
-  (set-face-attribute 'default (selected-frame) :height my-font-height))
 
 ;; sum numbers in region
 
