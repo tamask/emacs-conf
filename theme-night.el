@@ -367,4 +367,12 @@
    `(flymake-warning
      ((t (:foreground ,theme-warning :background unspecified :underline unspecified))))
 
+   ;; help
+
+   `(help-for-help-header
+     ((t (:font-height ,theme-font-height))))
+
+   `(help-key-binding
+     ((t (:box unspecified :foreground "lightskyblue1"))))
+
    ))

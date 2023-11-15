@@ -349,4 +349,12 @@
    `(flymake-warning
      ((t (:foreground ,theme-warning :background "#ffffbb" :underline unspecified))))
 
+   ;; help
+
+   `(help-for-help-header
+     ((t (:font-height ,theme-font-height))))
+
+   `(help-key-binding
+     ((t (:box unspecified :foreground "cadetblue4"))))
+
    ))
