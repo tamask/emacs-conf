@@ -17,6 +17,11 @@
   (setq theme-error "#ff446b")
   (setq theme-warning "#ffe386")
 
+  (setq theme-red "#ff9595")
+  (setq theme-green "#1ed897")
+  (setq theme-blue "#3d99db")
+  (setq theme-orange "#d69500")
+
   ;; ansi term
 
   (setq ansi-term-color-vector
@@ -225,8 +230,8 @@
    `(info-menu-header
      ((t (:inherit unspecified :weight bold))))
 
-   `(Info-quoted ; not a type
-     ((t (:family ,theme-font-family :foreground "#888"))))
+   `(Info-quoted ; not a typo
+     ((t (:family ,theme-font-family :foreground "#e8a0a"))))
 
    `(info-menu-star
      ((t (:foreground unspecified))))
@@ -374,5 +379,73 @@
 
    `(help-key-binding
      ((t (:box unspecified :foreground "lightskyblue1"))))
+
+   ;; magit
+
+   `(magit-hash
+     ((t (:foreground "#888"))))
+
+   `(magit-branch-local
+     ((t (:foreground ,theme-green))))
+
+   `(magit-branch-current
+     ((t (:inherit 'magit-branch-local :box unspecified :weight bold))))
+
+   `(magit-branch-remote
+     ((t (:foreground ,theme-blue))))
+
+   `(magit-branch-remote-head
+     ((t (:inherit 'magit-branch-remote :box unspecified :weight bold))))
+
+   `(magit-section-heading
+     ((t (:foreground unspecified :weight bold))))
+
+   `(magit-section-highlight
+     ((t (:background unspecified))))
+
+   `(magit-diff-file-heading
+     ((t (:background unspecified :weight normal))))
+
+   `(magit-diff-file-heading-highlight
+     ((t (:background unspecified :inherit 'magit-diff-file-heading))))
+
+   `(magit-diff-hunk-heading
+     ((t (:background unspecified :foreground ,theme-blue))))
+
+   `(magit-diff-hunk-heading-highlight
+     ((t (:background unspecified :inherit 'magit-diff-hunk-heading))))
+
+   `(magit-diff-context-highlight
+     ((t (:background unspecified :inherit 'magit-diff-context))))
+
+   `(magit-diff-added
+     ((t (:background unspecified :foreground ,theme-green))))
+
+   `(magit-diff-added-highlight
+     ((t (:background unspecified :inherit 'magit-diff-added))))
+
+   `(magit-diff-removed
+     ((t (:background unspecified :foreground ,theme-red))))
+
+   `(magit-diff-removed-highlight
+     ((t (:background unspecified :inherit 'magit-diff-removed))))
+
+   `(magit-diff-base
+     ((t (:background unspecified :foreground ,theme-orange))))
+
+   `(magit-diff-base-highlight
+     ((t (:background unspecified :inherit 'magit-diff-base))))
+
+   `(magit-diff-our-highlight
+     ((t (:background unspecified :inherit 'magit-diff-our))))
+
+   `(magit-diff-their-highlight
+     ((t (:background unspecified :inherit 'magit-diff-their))))
+
+   `(magit-diff-revision-summary
+     ((t (:foreground unspecified :weight bold))))
+
+   `(magit-diff-revision-summary-highlight
+     ((t (:inherit 'magit-diff-revision-summary))))
 
    ))
