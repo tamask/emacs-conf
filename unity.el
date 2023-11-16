@@ -21,4 +21,6 @@
      :type git
      :host github
      :repo "midnightsuyama/shader-mode")
-    :mode ("\\.shader\\'" "\\.cginc\\'")))
+    :mode ("\\.shader\\'" "\\.cginc\\'"))
+
+  (setq dired-omit-files (concat dired-omit-files "\\|\\.meta$")))

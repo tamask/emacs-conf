@@ -5,6 +5,7 @@
 ;; company mode
 
 (use-package company
+  :straight t
   :hook (prog-mode . company-mode)
   :bind ("C-;" . company-complete)
   :config
@@ -46,11 +47,11 @@
 
 ;; for writing text documents without hard wrapping
 
-(use-package visual-fill-column)
+(use-package visual-fill-column :straight t)
 
 ;; markdown
 
-(use-package markdown-mode :mode "\\.md\\'")
+(use-package markdown-mode :straight t :mode "\\.md\\'")
 
 ;; sass/scss
 
@@ -73,7 +74,7 @@
 
 (defun use-multiple-cursors ()
   (interactive)
-  (use-package multiple-cursors)
+  (use-package multiple-cursors :straight t)
   (message "multiple-cursors loaded"))
 
 (global-set-key (kbd "C-c C-x 1") 'use-multiple-cursors)
