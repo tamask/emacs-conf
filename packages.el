@@ -45,6 +45,10 @@
 ;;  'eglot-managed-mode-hook
 ;;  (lambda () (remove-hook 'flymake-diagnostic-functions 'eglot-flymake-backend)))
 
+;; magit
+
+(use-package magit :straight t :defer t)
+
 ;; for writing text documents without hard wrapping
 
 (use-package visual-fill-column :straight t)
