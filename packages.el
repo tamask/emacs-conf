@@ -30,17 +30,6 @@
  '(:documentOnTypeFormattingProvider
    :inlayHintProvider))
 
-;; (setq
-;;  eglot-ignored-server-capabilities
-;;  '(:codeActionProvider
-;;    :documentFormattingProvider
-;;    :documentRangeFormattingProvider
-;;    :documentOnTypeFormattingProvider
-;;    :colorProvider
-;;    :foldingRangeProvider
-;;    :executeCommandProvider
-;;    :inlayHintProvider))
-
 ;; (add-hook
 ;;  'eglot-managed-mode-hook
 ;;  (lambda () (remove-hook 'flymake-diagnostic-functions 'eglot-flymake-backend)))
@@ -48,10 +37,6 @@
 ;; magit
 
 (use-package magit :straight t :defer t)
-
-;; for writing text documents without hard wrapping
-
-(use-package visual-fill-column :straight t)
 
 ;; markdown
 
@@ -69,16 +54,51 @@
   :config
   (setq scss-compile-at-save nil))
 
-;;
-;; deferred packages
-;;
+;; multiple-cursors
 
-;; avoid loading these during initialization, but provide a
-;; convenience method/keybinding to load them on demand
+(use-package multiple-cursors :straight t :defer t)
 
-(defun use-multiple-cursors ()
-  (interactive)
-  (use-package multiple-cursors :straight t)
-  (message "multiple-cursors loaded"))
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
 
-(global-set-key (kbd "C-c C-x 1") 'use-multiple-cursors)
+;; visual-line-mode that can wrap at a given column, plus a patch for
+;; a couple functions to accomodate non-zero left/right-margin-width
+
+(use-package visual-fill-column :straight t)
+
+(defun visual-fill-column--set-margins (window)
+  "Set window margins for WINDOW."
+  ;; Calculate left & right margins.
+  (let* ((total-margin-width (+ left-margin-width right-margin-width))
+         (total-width (- (visual-fill-column--window-max-text-width window) total-margin-width))
+         (width (or visual-fill-column-width
+                    fill-column))
+         (margins (if (< (- total-width width) 0) ; margins must be >= 0
+                      0
+                    (- total-width width)))
+         (left (if visual-fill-column-center-text
+                   (/ margins 2)
+                 left-margin-width))
+         (right (- margins left)))
+
+    (if visual-fill-column-extra-text-width
+        (let ((add-width (visual-fill-column--add-extra-width left right visual-fill-column-extra-text-width)))
+          (setq left (car add-width)
+                right (cdr add-width))))
+
+    ;; put an explicitly R2L buffer on the right side of the window
+    (when (and (eq bidi-paragraph-direction 'right-to-left)
+               (= left 0))
+      (setq left right)
+      (setq right 0))
+
+    (set-window-margins window left right)))
+
+(defun visual-fill-column-mode--disable ()
+  "Disable `visual-fill-column-mode' for the current buffer."
+  (remove-hook 'window-configuration-change-hook #'visual-fill-column--adjust-window 'local)
+
+  (let ((window (get-buffer-window (current-buffer))))
+    (remove-hook 'window-state-change-functions #'visual-fill-column--adjust-window 'local)
+    (set-window-margins window left-margin-width right-margin-width)
+    (set-window-parameter window 'min-margins nil)
+    (set-window-fringes window nil)))

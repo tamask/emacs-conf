@@ -180,3 +180,7 @@
 ;; automatically consider the following local/project variables safe
 
 (add-to-list 'safe-local-variable-values '(indent-tabs-mode t))
+
+;; change '$' to '~' for line truncation symbol
+
+(set-display-table-slot standard-display-table 0 ?\~)

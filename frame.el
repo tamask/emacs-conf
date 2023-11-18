@@ -16,6 +16,15 @@
 
 (menu-bar-mode -1)
 
+;; disable fringe and use margins instead
+
+(set-fringe-style 0)
+
+(when window-system
+  (setq-default left-margin-width 1 right-margin-width 1)
+  (set-window-buffer nil (current-buffer))
+  (set-window-margins (selected-window) left-margin-width right-margin-width))
+
 ;; set frame geometry
 
 (set-frame-size
