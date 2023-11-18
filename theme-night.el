@@ -12,6 +12,7 @@
   (setq theme-accent "#b0bcfc")
   (setq theme-second "#ff9595")
   (setq theme-third "#57d88f")
+  (setq theme-dim "#aaa")
 
   (setq theme-highlight "#364b4f")
   (setq theme-error "#ff446b")
@@ -106,7 +107,7 @@
    `(success
      ((t (:foreground "palegreen"))))
 
-   ;; modeline
+   ;; mode-line
 
    `(mode-line
      ((t (:box nil :background "grey20" :foreground ,theme-foreground))))
@@ -167,7 +168,7 @@
    ;; font-lock
 
    `(font-lock-type-face
-     ((t (:foreground ,theme-accent))))
+     ((t (:foreground ,theme-accent :weight normal))))
 
    `(font-lock-comment-face
      ((t (:foreground "dimgrey" :slant italic))))
@@ -179,10 +180,13 @@
      ((t (:foreground ,theme-accent :weight normal))))
 
    `(font-lock-constant-face
-     ((t (:foreground ,theme-foreground :weight normal))))
+     ((t (:foreground unspecified :weight normal))))
 
    `(font-lock-function-name-face
-     ((t (:foreground ,theme-foreground))))
+     ((t (:foreground "#fff" :weight normal))))
+
+   `(font-lock-function-call-face
+     ((t (:foreground ,theme-foreground :weight normal))))
 
    `(font-lock-keyword-face
      ((t (:foreground ,theme-accent))))
@@ -195,6 +199,18 @@
 
    `(font-lock-warning-face
      ((t (:foreground "khaki" :weight normal))))
+
+   `(font-lock-delimiter-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-bracket-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-operator-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-doc-face
+     ((t (:foreground "cadetblue4"))))
 
    ;; company
 
@@ -404,7 +420,7 @@
      ((t (:background unspecified))))
 
    `(magit-diff-file-heading
-     ((t (:background unspecified :weight normal))))
+     ((t (:background unspecified :foreground "white" :weight normal))))
 
    `(magit-diff-file-heading-highlight
      ((t (:background unspecified :inherit 'magit-diff-file-heading))))

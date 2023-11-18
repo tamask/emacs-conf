@@ -12,6 +12,7 @@
   (setq theme-accent "#6865dd")
   (setq theme-second "deep pink")
   (setq theme-third "#009062")
+  (setq theme-dim "#666")
 
   (setq theme-highlight "#ffffbb")
   (setq theme-error "deep pink")
@@ -147,10 +148,13 @@
      ((t (:foreground ,theme-accent))))
 
    `(font-lock-constant-face
-     ((t (:foreground ,theme-accent))))
+     ((t (:foreground unspecified :weight normal))))
 
    `(font-lock-function-name-face
-     ((t (:foreground unspecified))))
+     ((t (:foreground unspecified :weight normal))))
+
+   `(font-lock-function-call-face
+     ((t (:foreground unspecified :weight normal))))
 
    `(font-lock-keyword-face
      ((t (:foreground ,theme-accent))))
@@ -169,6 +173,18 @@
 
    `(font-lock-warning-face
      ((t (:foreground "orangered" :weight normal))))
+
+   `(font-lock-delimiter-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-bracket-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-operator-face
+     ((t (:foreground ,theme-dim))))
+
+   `(font-lock-doc-face
+     ((t (:foreground "#008770"))))
 
    ;; company
 
