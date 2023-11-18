@@ -23,7 +23,9 @@
 (when window-system
   (setq-default left-margin-width 1 right-margin-width 1)
   (set-window-buffer nil (current-buffer))
-  (set-window-margins (selected-window) left-margin-width right-margin-width))
+  (dolist (window (window-list))
+    (set-window-margins window left-margin-width right-margin-width))
+  (set-window-margins (minibuffer-window) left-margin-width right-margin-width))
 
 ;; set frame geometry
 
