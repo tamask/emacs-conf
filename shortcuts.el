@@ -99,6 +99,14 @@
 (global-set-key (kbd "C-<tab>") 'dabbrev-expand)
 (define-key minibuffer-local-map (kbd "C-<tab>") 'dabbrev-expand)
 
+;; easier to remember keybindings for navigating help stack
+
+(add-hook
+ 'help-mode-hook
+ (lambda ()
+   (local-set-key (kbd "f") 'help-go-forward)
+   (local-set-key (kbd "b") 'help-go-back)))
+
 ;; misc
 
 (global-set-key (kbd "\C-c1") 'delete-trailing-whitespace)
