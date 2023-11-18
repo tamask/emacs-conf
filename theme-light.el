@@ -186,6 +186,11 @@
    `(font-lock-doc-face
      ((t (:foreground "#008770"))))
 
+   ;; sh
+
+   `(sh-heredoc
+     ((t (:foreground "#008770"))))
+
    ;; company
 
    `(company-tooltip

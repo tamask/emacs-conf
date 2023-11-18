@@ -7,7 +7,7 @@
   (setq theme-font-height (plist-get-or-default my-config :font-height 100))
 
   (setq theme-foreground "#dddddd")
-  (setq theme-background "#202020")
+  (setq theme-background "#222222")
 
   (setq theme-accent "#b0bcfc")
   (setq theme-second "#ff9595")
@@ -211,6 +211,11 @@
 
    `(font-lock-doc-face
      ((t (:foreground "cadetblue4"))))
+
+   ;; sh
+
+   `(sh-heredoc
+     ((t (:foreground "cadetblue4" :weight: normal))))
 
    ;; company
 
