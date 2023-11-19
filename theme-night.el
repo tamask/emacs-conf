@@ -141,10 +141,13 @@
    ;; dired
 
    `(dired-header
-     ((t (:foreground ,theme-accent))))
+     ((t (:foreground ,theme-second))))
 
    `(dired-directory
      ((t (:foreground ,theme-accent))))
+
+   `(dired-symlink
+     ((t (:foreground ,theme-green))))
 
    `(dired-flagged
      ((t (:foreground "#ff9595" :weight normal))))
@@ -325,29 +328,44 @@
    `(diff-function
      ((t (:background unspecified :foreground unspecified :weight bold))))
 
+   `(diff-context
+     ((t (:background unspecified :foreground ,theme-dim))))
+
    `(diff-header
      ((t (:background unspecified :foreground unspecified :weight bold))))
 
    `(diff-hunk-header
-     ((t (:background unspecified :foreground "dimgrey"))))
+     ((t (:background unspecified :foreground ,theme-blue))))
 
    `(diff-index
      ((t (:background unspecified :foreground ,theme-foreground))))
 
    `(diff-indicator-added
-     ((t (:foreground "yellowgreen"))))
+     ((t (:background "#254742" :foreground ,theme-green))))
 
    `(diff-indicator-removed
-     ((t (:foreground "dimgrey"))))
+     ((t (:background "#482E32" :foreground ,theme-red))))
 
    `(diff-indicator-changed
-     ((t (:foreground "khaki"))))
+     ((t (:background "#433828" :foreground ,theme-orange))))
+
+   `(diff-added
+     ((t (:background "#254742" :foreground unspecified))))
+
+   `(diff-refine-added
+     ((t (:background "#327452" :foreground unspecified))))
 
    `(diff-removed
-     ((t (:foreground "dimgrey"))))
+     ((t (:background "#482E32" :foreground unspecified))))
 
-   `(diff-refine-change
-     ((t (:background unspecified))))
+   `(diff-refine-removed
+     ((t (:background "#843D42" :foreground unspecified))))
+
+   `(diff-changed
+     ((t (:background "#433828" :foreground unspecified))))
+
+   `(diff-refine-changed
+     ((t (:background "#946E28" :foreground unspecified))))
 
    ;; customize
 
