@@ -120,7 +120,7 @@
 
 ;; dired formatting (humanized dates, no owner)
 
-(setq dired-listing-switches "-halG")
+(setq dired-listing-switches "-hoa")
 
 ;; hide some files in dired
 

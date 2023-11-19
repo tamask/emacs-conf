@@ -113,3 +113,4 @@
 (global-set-key (kbd "\C-c2") 'align-regexp)
 (global-set-key (kbd "\C-c3") 'indent-tabs-mode)
 (global-set-key (kbd "\C-c=") 'describe-char)
+(global-set-key (kbd "\C-c\\") 'toggle-truncate-lines)
