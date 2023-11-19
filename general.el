@@ -183,4 +183,5 @@
 
 ;; change '$' to '~' for line truncation symbol
 
-(set-display-table-slot standard-display-table 0 ?\~)
+(set-display-table-slot standard-display-table 0 ?›) ; ▶▷▸→›⟩
+(set-display-table-slot standard-display-table 1 ?∙) ; ▼▽▾↓↧∙⌄
