@@ -14,3 +14,5 @@ Basic initialization in `.emacs`:
 
 (load "~/.emacs-conf/init")
 ```
+
+Manually install/update treesitter grammars selected in `emacs-conf/package.el` with `M-x treesit-fetch-grammars` (This conf doesn't automatically check to see which ones are installed already.)
