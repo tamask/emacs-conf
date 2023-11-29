@@ -15,6 +15,7 @@
   (setq theme-dim "#aaa")
 
   (setq theme-highlight "#364b4f")
+  (setq theme-info "#e8a0a")
   (setq theme-error "#ff446b")
   (setq theme-warning "#ffe386")
 
@@ -124,19 +125,19 @@
      ((t (:foreground ,theme-accent :weight normal))))
 
    `(compilation-mode-line-run
-     ((t (:foreground "khaki" :weight normal))))
+     ((t (:foreground ,theme-green :weight normal))))
 
    `(compilation-mode-line-fail
-     ((t (:foreground "wheat" :weight normal))))
+     ((t (:foreground ,theme-error :weight normal))))
+
+   `(compilation-info
+     ((t (:foreground ,theme-info :weight normal))))
 
    `(compilation-warning
-     ((t (:foreground "khaki" :weight normal))))
+     ((t (:foreground ,theme-warning :weight normal))))
 
-   `(compilation-info
-     ((t (:foreground "khaki" :weight normal))))
-
-   `(compilation-info
-     ((t (:foreground "khaki" :weight normal))))
+   `(compilation-error
+     ((t (:foreground ,theme-error :weight normal))))
 
    ;; dired
 
@@ -214,6 +215,9 @@
 
    `(font-lock-doc-face
      ((t (:foreground "cadetblue4"))))
+
+   `(font-lock-escape-face
+     ((t (:foreground ,theme-second :weight normal))))
 
    ;; sh
 

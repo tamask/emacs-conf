@@ -15,6 +15,7 @@
   (setq theme-dim "#666")
 
   (setq theme-highlight "#ffffbb")
+  (setq theme-info "#d65c7e")
   (setq theme-error "deep pink")
   (setq theme-warning "#fc8749")
 
@@ -168,9 +169,6 @@
    `(font-lock-variable-name-face
      ((t (:foreground ,theme-foreground))))
 
-   ;; `(font-lock-variable-name-face
-   ;;   ((t (:foreground nil :inherit nil))))
-
    `(font-lock-preprocessor-face
      ((t (:foreground ,theme-accent :inherit nil))))
 
@@ -188,6 +186,9 @@
 
    `(font-lock-doc-face
      ((t (:foreground "#008770"))))
+
+   `(font-lock-escape-face
+     ((t (:foreground ,theme-second :weight normal))))
 
    ;; sh
 
@@ -236,8 +237,23 @@
 
    ;; compilation
 
+   `(compilation-mode-line-exit
+     ((t (:foreground ,theme-accent :weight normal))))
+
+   `(compilation-mode-line-run
+     ((t (:foreground ,theme-green :weight normal))))
+
+   `(compilation-mode-line-fail
+     ((t (:foreground ,theme-error :weight normal))))
+
    `(compilation-info
-     ((t (:foreground ,theme-second :weight normal ))))
+     ((t (:foreground ,theme-info :weight normal))))
+
+   `(compilation-warning
+     ((t (:foreground ,theme-warning :weight normal))))
+
+   `(compilation-error
+     ((t (:foreground ,theme-error :weight normal))))
 
    ;; markdown
 
