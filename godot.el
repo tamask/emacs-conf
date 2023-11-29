@@ -10,6 +10,8 @@
   (if (string= system-type "darwin")
       (setq godot-app-path "/Applications/Godot.app/Contents/MacOS/Godot"))
 
+  ;; gdscript
+
   (use-package gdscript-mode
     :straight
     (gdscript-mode
@@ -22,6 +24,8 @@
     (setq gdscript-use-tab-indents nil)
     (setq gdscript-godot-executable godot-app-path))
 
+  ;; gdshader
+
   (use-package gdshader-mode
     :straight
     (gdshader-mode
@@ -30,5 +34,17 @@
      :repo "bbbscarter/gdshader-mode")
     :mode ("\\.gdshader\\'" "\\.gdshaderinc\\'"))
 
+  ;; use conf mode (for now) for resource files
+
   (use-package conf-mode
-    :mode ("\\.godot\\'" "\\.import\\'" "\\.tres\\'" "\\.tscn\\'")))
+    :mode ("\\.godot\\'" "\\.import\\'" "\\.tres\\'" "\\.tscn\\'"))
+
+  ;; treesitter for godot
+
+  (add-to-list
+   'treesit-language-source-alist
+   '(gdscript "https://github.com/PrestonKnopp/tree-sitter-gdscript"))
+
+  (add-to-list
+   'major-mode-remap-alist
+   '(gdscript-mode . gdscript-ts-mode)))

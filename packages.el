@@ -69,6 +69,36 @@
 
 (global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
 
+;; treesitter
+
+;; guide: https://www.masteringemacs.org/article/how-to-get-started-tree-sitterf
+
+(setq treesit-font-lock-level 4)
+
+(setq treesit-language-source-alist
+      '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+        (python "https://github.com/tree-sitter/tree-sitter-python")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (json "https://github.com/tree-sitter/tree-sitter-json")
+        (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+        (toml "https://github.com/tree-sitter/tree-sitter-toml")
+        (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+(setq major-mode-remap-alist
+      '((sh-mode . bash-ts-mode)
+        (python-mode . python-ts-mode)
+        (javascript-mode . js-ts-mode)
+        (js-json-mode . json-ts-mode)))
+
+(defun treesit-fetch-grammars ()
+  (interactive)
+  (dolist (val treesit-language-source-alist)
+    (treesit-install-language-grammar (car val))))
+
+;; treesitter packages
+
+(use-package yaml-ts-mode :defer t :mode "\\.yaml\\'")
+
 ;; visual-line-mode that can wrap at a given column, plus a patch for
 ;; a couple functions to accomodate non-zero left/right-margin-width
 

@@ -122,7 +122,7 @@
      ((t (:background ,theme-accent :foreground "white" :box unspecified))))
 
    `(mode-line-inactive
-     ((t (:background "white" :foreground "honeydew3" :box unspecified))))
+     ((t (:background "white" :foreground "#888" :box unspecified))))
 
    `(mode-line-highlight
      ((t ())))
@@ -189,6 +189,9 @@
 
    `(font-lock-escape-face
      ((t (:foreground ,theme-second :weight normal))))
+
+   `(font-lock-property-use-face
+     ((t (:foreground ,theme-accent))))
 
    ;; sh
 

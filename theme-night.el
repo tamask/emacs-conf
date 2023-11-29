@@ -219,6 +219,9 @@
    `(font-lock-escape-face
      ((t (:foreground ,theme-second :weight normal))))
 
+   `(font-lock-property-use-face
+     ((t (:foreground ,theme-accent))))
+
    ;; sh
 
    `(sh-heredoc
