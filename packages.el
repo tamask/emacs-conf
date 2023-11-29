@@ -30,9 +30,18 @@
  '(:documentOnTypeFormattingProvider
    :inlayHintProvider))
 
+(setq-default
+ eglot-workspace-configuration
+ '(:pylsp (:plugins ( :pycodestyle (:enabled :json-false)
+                      :autopep8 (:enabled :json-false)
+                      :mccabe (:enabled :json-false)
+                      :yapf (:enabled :json-false)))))
+
 ;; (add-hook
 ;;  'eglot-managed-mode-hook
 ;;  (lambda () (remove-hook 'flymake-diagnostic-functions 'eglot-flymake-backend)))
+
+;; (global-set-key (kbd "C-.") 'eldoc-print-current-symbol-info)
 
 ;; magit
 
