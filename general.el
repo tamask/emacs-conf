@@ -185,3 +185,7 @@
 
 (set-display-table-slot standard-display-table 0 ?›) ; ▶▷▸→›⟩
 (set-display-table-slot standard-display-table 1 ?∙) ; ▼▽▾↓↧∙⌄
+
+;; open svg files as xml instead of viewing the actual image
+
+(add-to-list 'auto-mode-alist '("\\.svg\\'" . xml-mode))
