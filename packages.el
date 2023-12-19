@@ -69,6 +69,19 @@
 
 (global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
 
+;; age-mode
+
+(use-package age
+  :straight
+  (age
+   :type git
+   :host github
+   :repo "anticomputer/age.el")
+  :ensure t
+  :demand t
+  :config
+  (age-file-enable))
+
 ;; treesitter
 
 ;; guide: https://www.masteringemacs.org/article/how-to-get-started-tree-sitterf
