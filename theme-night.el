@@ -267,6 +267,11 @@
    `(info-menu-star
      ((t (:foreground unspecified))))
 
+   ;; apropos
+
+   `(apropos-symbol
+     ((t (:foreground ,theme-accent))))
+
    ;; markdown
 
    `(markdown-header-face

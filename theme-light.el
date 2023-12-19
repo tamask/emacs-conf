@@ -238,6 +238,11 @@
    `(info-menu-star
      ((t (:foreground ,theme-second))))
 
+   ;; apropos
+
+   `(apropos-symbol
+     ((t (:foreground ,theme-accent))))
+
    ;; compilation
 
    `(compilation-mode-line-exit
