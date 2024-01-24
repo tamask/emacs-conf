@@ -184,3 +184,39 @@ line"
       (insert result))))
 
 (global-set-key (kbd "\C-c RET") 'calc-eval-region-or-line)
+(global-set-key '[(f12)] 'calc-eval-region-or-line) ;; in case there's a mode kbd override for above
+
+;; flymake
+
+(defun flymake-show-and-resize-diagnostics ()
+  (interactive)
+  ;; Call flymake-show-buffer-diagnostics
+  (flymake-show-buffer-diagnostics)
+  ;; Find the buffer created by flymake-show-buffer-diagnostics
+  (let ((diag-buffer (get-buffer "*Flymake diagnostics*")))
+    (when diag-buffer
+      ;; Switch to the diagnostics buffer
+      (switch-to-buffer-other-window diag-buffer)
+      ;; Resize window to fit the buffer content
+      (fit-window-to-buffer (get-buffer-window diag-buffer) nil 1))))
+
+(defun flymake-show-and-resize-diagnostics ()
+  (interactive)
+  ;; Call flymake-show-buffer-diagnostics
+  (flymake-show-buffer-diagnostics)
+  ;; Iterate over all buffers to find the Flymake diagnostics buffer
+  (let ((buffers (buffer-list))
+        diag-buffer)
+    (while (and buffers (not diag-buffer))
+      (let ((buffer (car buffers)))
+        (when (and (buffer-live-p buffer)
+                   (string-match-p "^\\*Flymake diagnostics for " (buffer-name buffer)))
+          (setq diag-buffer buffer)))
+      (setq buffers (cdr buffers)))
+    (when diag-buffer
+      ;; Switch to the diagnostics buffer
+      (switch-to-buffer-other-window diag-buffer)
+      ;; Resize window to fit the buffer content
+      (fit-window-to-buffer (get-buffer-window diag-buffer) nil 1))))
+
+(global-set-key (kbd "\C-c f") 'flymake-show-and-resize-diagnostics)

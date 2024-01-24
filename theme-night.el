@@ -499,4 +499,9 @@
    `(magit-diff-revision-summary-highlight
      ((t (:inherit 'magit-diff-revision-summary))))
 
+   ;; openai
+
+   `(chatgpt-info
+     ((t (:height: unspecified))))
+
    ))
