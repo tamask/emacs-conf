@@ -496,6 +496,6 @@
    ;; openai
 
    `(chatgpt-info
-     ((t (:height: unspecified))))
+     ((t (:height: unspecified :foreground "#aaa"))))
 
    ))
