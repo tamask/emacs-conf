@@ -24,6 +24,9 @@
   (setq theme-blue "#3d99db")
   (setq theme-orange "#d69500")
 
+  (setq theme-match-foreground "#ffd6aa")
+  (setq theme-match-background "#373127")
+
   ;; ansi term
 
   (setq ansi-term-color-vector
@@ -61,7 +64,7 @@
      ((t (:background "grey"))))
 
    `(vertical-border
-     ((t (:foreground "#191919"))))
+     ((t (:foreground ,theme-background))))
 
    `(fringe
      ((t (:background ,theme-background :foreground "#777777"))))
@@ -107,6 +110,9 @@
 
    `(success
      ((t (:foreground "palegreen"))))
+
+   `(underline
+     ((t (:underline nil :background ,theme-match-background))))
 
    ;; mode-line
 
@@ -430,6 +436,17 @@
 
    `(help-key-binding
      ((t (:box unspecified :foreground "lightskyblue1"))))
+
+   ;; xref
+
+   `(xref-file-header
+     ((t (:foreground ,theme-second))))
+
+   `(xref-line-number
+     ((t (:foreground unspecified))))
+
+   `(xref-match
+     ((t (:foreground ,theme-match-foreground :background ,theme-match-background))))
 
    ;; magit
 

@@ -154,3 +154,63 @@
     (set-window-margins window left-margin-width right-margin-width)
     (set-window-parameter window 'min-margins nil)
     (set-window-fringes window nil)))
+
+;; ses-mode tweaks
+
+(defun ses-calculate-lineno-width ()
+  "Calculate the width needed for the line number display."
+  (let ((line-count (count-lines (point-min) (point-max))))
+    (length (number-to-string line-count))))
+
+(defun ses-overrides ()
+  (defun ses-create-header-string ()
+    "(Overridden) Set up `ses--header-string' as the buffer's header line.
+Based on the current set of columns and `window-hscroll' position."
+    (let ((totwidth (- (window-hscroll)))
+	      result width x)
+      ;; Leave room for the left-side fringe and scrollbar.
+      (push (propertize " " 'display '((space :align-to 0))) result)
+      (dotimes (col ses--numcols)
+        (setq width    (ses-col-width col)
+	          totwidth (+ totwidth width 1))
+        (if (= totwidth 1)
+	        ;; Scrolled so intercolumn space is leftmost.
+	        (push " " result))
+        (when (> totwidth 1)
+	      (if (> ses--header-row 0)
+	          (save-excursion
+	            (ses-goto-print (1- ses--header-row) col)
+	            (setq x (buffer-substring-no-properties (point)
+						                                (+ (point) width)))
+	            ;; Strip trailing space.
+	            (if (string-match "[ \t]+\\'" x)
+		            (setq x (substring x 0 (match-beginning 0))))
+	            ;; Cut off excess text.
+	            (if (>= (length x) totwidth)
+		            (setq x (substring x 0 (- totwidth -1)))))
+	        (setq x (ses-column-letter col)))
+          (setq x (concat (make-string (+ 2 (ses-calculate-lineno-width)) ?\s) x))
+	      (push (propertize x 'face ses-box-prop) result)
+	      (push (propertize "."
+			                'display    `((space :align-to ,(1- totwidth)))
+			                'face       ses-box-prop)
+	            result)
+	      ;; Allow the following space to be squished to make room for the 3-D box
+	      ;; Coverage test ignores properties, thinks this is always a space!
+	      (push (1value (propertize " " 'display `((space :align-to ,totwidth))))
+	            result)))
+      (if (> ses--header-row 0)
+	      (push (propertize (format "  [row %d]" ses--header-row)
+			                'display '((height (- 1))))
+	            result))
+      (setq ses--header-string (apply #'concat (nreverse result)))))
+  )
+
+;; (add-hook 'ses-mode-hook 'display-line-numbers-mode)
+
+(defun my-ses-mode-hook ()
+  (setq ses-box-prop '(:box unspecified :inherit 'line-number))
+  (display-line-numbers-mode)
+  (ses-overrides))
+
+(add-hook 'ses-mode-hook 'my-ses-mode-hook)

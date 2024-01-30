@@ -191,19 +191,7 @@ line"
 (defun flymake-show-and-resize-diagnostics ()
   (interactive)
   ;; Call flymake-show-buffer-diagnostics
-  (flymake-show-buffer-diagnostics)
-  ;; Find the buffer created by flymake-show-buffer-diagnostics
-  (let ((diag-buffer (get-buffer "*Flymake diagnostics*")))
-    (when diag-buffer
-      ;; Switch to the diagnostics buffer
-      (switch-to-buffer-other-window diag-buffer)
-      ;; Resize window to fit the buffer content
-      (fit-window-to-buffer (get-buffer-window diag-buffer) nil 1))))
-
-(defun flymake-show-and-resize-diagnostics ()
-  (interactive)
-  ;; Call flymake-show-buffer-diagnostics
-  (flymake-show-buffer-diagnostics)
+  (flymake-show-project-diagnostics)
   ;; Iterate over all buffers to find the Flymake diagnostics buffer
   (let ((buffers (buffer-list))
         diag-buffer)
