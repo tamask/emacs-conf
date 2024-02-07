@@ -112,7 +112,9 @@ This command does not push text to `kill-ring'."
       (visual-line-mode)
       (visual-fill-column-mode))))
 
+(global-set-key "\C-cq" 'toggle-truncate-lines)
 (global-set-key "\C-cw" 'toggle-visual-wrap)
+(global-set-key "\C-cv" 'visual-line-mode)
 
 ;; undo fill paragraph
 
