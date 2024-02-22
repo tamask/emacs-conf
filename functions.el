@@ -112,7 +112,7 @@ This command does not push text to `kill-ring'."
       (visual-line-mode)
       (visual-fill-column-mode))))
 
-(global-set-key "\C-cq" 'toggle-truncate-lines)
+;; (global-set-key "\C-cq" 'toggle-truncate-lines)
 (global-set-key "\C-cw" 'toggle-visual-wrap)
 (global-set-key "\C-cv" 'visual-line-mode)
 
@@ -210,3 +210,66 @@ line"
       (fit-window-to-buffer (get-buffer-window diag-buffer) nil 1))))
 
 (global-set-key (kbd "\C-c f") 'flymake-show-and-resize-diagnostics)
+
+;; saving/loading frame configurations:
+
+(defvar my-frame-config-file "~/.emacs.d/frame-bookmarks.txt"
+  "Path to the file where frame configurations are saved.")
+
+(defun my-frame-config-names ()
+  "Return a list of saved configuration names for completion."
+  (let (names)
+    (with-temp-buffer
+      (when (file-exists-p my-frame-config-file)
+        (insert-file-contents my-frame-config-file)
+        (goto-char (point-min))
+        (while (not (eobp))
+          (let ((line (buffer-substring-no-properties (line-beginning-position) (line-end-position))))
+            (when (string-match "^\\([^ ]+\\) " line)
+              (push (match-string 1 line) names)))
+          (forward-line 1))))
+    names))
+
+(defun frame-save (name)
+  "Save the current frame configuration with a given NAME, overwriting if it already exists."
+  (interactive (list (completing-read "Configuration name: " (my-frame-config-names) nil nil)))
+  (let* ((adjustment (if (and window-system (frame-parameter nil 'menu-bar-lines)) 1 0))  ;; Simple adjustment, customize as needed
+         (configs (with-temp-buffer
+                    (when (file-exists-p my-frame-config-file)
+                      (insert-file-contents my-frame-config-file))
+                    (delete-matching-lines (regexp-quote name) (point-min) (point-max) t)
+                    (buffer-string)))
+         (frame-config (format "%s %d %d %d %d\n" name
+                               (frame-parameter nil 'left)
+                               (frame-parameter nil 'top)
+                               (frame-parameter nil 'width)
+                               (+ (frame-parameter nil 'height) adjustment))))  ;; Adjust height
+    (with-temp-file my-frame-config-file
+      (insert configs)
+      (insert frame-config))
+    (message "Frame configuration saved as '%s'." name)))
+
+(defun frame-load (name)
+  "Load a frame configuration by its NAME."
+  (interactive (list (completing-read "Configuration name to load: " (my-frame-config-names))))
+  (with-temp-buffer
+    (insert-file-contents my-frame-config-file)
+    (goto-char (point-min))
+    (let ((found nil))
+      (while (and (not found) (not (eobp)))
+        (let ((line (buffer-substring-no-properties (line-beginning-position) (line-end-position))))
+          (when (string-prefix-p (concat name " ") line)
+            (setq found t)
+            (let* ((parts (split-string line " "))
+                   (left (string-to-number (nth 1 parts)))
+                   (top (string-to-number (nth 2 parts)))
+                   (width (string-to-number (nth 3 parts)))
+                   (height (string-to-number (nth 4 parts))))
+              (set-frame-parameter nil 'left left)
+              (set-frame-parameter nil 'top top)
+              (set-frame-parameter nil 'width width)
+              (set-frame-parameter nil 'height height)
+              (message "Loaded configuration '%s'." name))))
+        (forward-line 1))
+      (unless found
+        (message "No configuration found for '%s'." name)))))
