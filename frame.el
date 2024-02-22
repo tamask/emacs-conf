@@ -21,11 +21,15 @@
 (set-fringe-style 0)
 
 (when window-system
-  (setq-default left-margin-width 1 right-margin-width 1)
+  (setq-default left-margin-width 2 right-margin-width 2)
   (set-window-buffer nil (current-buffer))
   (dolist (window (window-list))
     (set-window-margins window left-margin-width right-margin-width))
   (set-window-margins (minibuffer-window) left-margin-width right-margin-width))
+
+(setq-default mode-line-mule-info
+      (cons (concat " " (car mode-line-mule-info))
+            (cdr mode-line-mule-info)))
 
 ;; set frame geometry
 
