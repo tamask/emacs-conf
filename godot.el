@@ -22,7 +22,8 @@
     :mode "\\.gd\\'"
     :config
     (setq gdscript-use-tab-indents nil)
-    (setq gdscript-godot-executable godot-app-path))
+    (setq gdscript-godot-executable godot-app-path)
+    (define-key gdscript-mode-map (kbd "C-c i") 'increase-left-margin))
 
   ;; gdshader
 
