@@ -273,3 +273,32 @@ line"
         (forward-line 1))
       (unless found
         (message "No configuration found for '%s'." name)))))
+
+;; customized fill-paragraph that takes indentation into account
+
+(defun fill-paragraph-with-indent (&optional justify region)
+  "Fill paragraph (or REGION if specified) at point, considering current indentation.
+Takes into account the left indentation for comments or text in source code."
+  (interactive (list (if current-prefix-arg 'full) t))
+  (save-excursion
+    (let* ((inhibit-read-only t)
+           (inhibit-point-motion-hooks t)
+           (fill-paragraph-function nil)
+           (paragraph-start "\f\\|[ \t]*$")
+           (paragraph-separate paragraph-start)
+           initial-indent fill-width)
+      ;; Determine the initial indentation of the (first line of the) paragraph or region.
+      (if region
+          (progn
+            (goto-char (region-beginning))
+            (setq initial-indent (current-indentation)))
+        (forward-paragraph)
+        (backward-paragraph)
+        (setq initial-indent (current-indentation)))
+      ;; Calculate the fill width based on current indentation
+      (setq fill-width (+ fill-column initial-indent))
+      ;; Temporarily adjust fill-column for the duration of fill-paragraph
+      (let ((fill-column fill-width))
+        (fill-paragraph justify region)))))
+
+(global-set-key (kbd "M-q") 'fill-paragraph-with-indent)

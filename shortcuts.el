@@ -114,3 +114,8 @@
 (global-set-key (kbd "\C-c3") 'indent-tabs-mode)
 (global-set-key (kbd "\C-c=") 'describe-char)
 (global-set-key (kbd "\C-c\\") 'toggle-truncate-lines)
+
+;; register shortcuts
+
+(global-set-key '[(shift f8)] 'point-to-register)
+(global-set-key '[(f8)] 'jump-to-register)
