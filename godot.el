@@ -48,4 +48,27 @@
 
   (add-to-list
    'major-mode-remap-alist
-   '(gdscript-mode . gdscript-ts-mode)))
+   '(gdscript-mode . gdscript-ts-mode))
+
+  ;; headless editor
+
+  (defvar godot-editor-command
+    "godot -e --headless --debug-server tcp://127.0.0.1:6007 --lsp-port 6005 \"%s\"")
+
+  (defvar godot-editor-buffer-height 6)
+
+  (defun godot-project ()
+    "Run a command on a selected Godot project directory."
+    (interactive)
+    (let* ((project-dir (read-directory-name "Select Godot project directory: "))
+           (project-file (expand-file-name "project.godot" project-dir))
+           (project-name (file-name-nondirectory (directory-file-name project-dir))))
+      ;; Check if the project.godot file exists in the selected directory.
+      (if (file-exists-p project-file)
+          (let* ((command (format godot-editor-command project-file))
+                 (buffer-name (generate-new-buffer-name (format "*godot editor: %s*" project-name))))
+            ;; Run the command asynchronously and specify a *unique* buffer name.
+            (async-shell-command command buffer-name)
+            (fit-window-to-buffer (get-buffer-window buffer-name) nil godot-editor-buffer-height))
+        (message "The selected directory does not contain a project.godot file."))))
+  )
