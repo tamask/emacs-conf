@@ -117,5 +117,7 @@
 
 ;; register shortcuts
 
-(global-set-key '[(shift f8)] 'point-to-register)
-(global-set-key '[(f8)] 'jump-to-register)
+;; (global-set-key '[(shift f8)] 'point-to-register)
+;; (global-set-key '[(f8)] 'jump-to-register)
+(global-set-key (kbd "\C-c m") 'point-to-register)
+
