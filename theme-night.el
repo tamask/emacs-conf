@@ -516,6 +516,56 @@
    `(magit-diff-revision-summary-highlight
      ((t (:inherit 'magit-diff-revision-summary))))
 
+   ;; ansi-colors
+
+   `(ansi-color-black
+     ((t (:foreground "#343434" :background "#343434"))))
+
+   `(ansi-color-white
+     ((t (:foreground ,theme-foreground :background ,theme-foreground))))
+
+   `(ansi-color-blue
+     ((t (:foreground "#5c6bc1" :background "#5c6bc1"))))
+
+   `(ansi-color-cyan
+     ((t (:foreground "#2aa198" :background "#2aa198"))))
+
+   `(ansi-color-green
+     ((t (:foreground "#4da374" :background "#4da374"))))
+
+   `(ansi-color-magenta
+     ((t (:foreground "#d757a7" :background "#d757a7"))))
+
+   `(ansi-color-red
+     ((t (:foreground "#ec4c59" :background "#ec4c59"))))
+
+   `(ansi-color-yellow
+     ((t (:foreground "#5e5432" :background "#5e5432"))))
+
+   `(ansi-color-bright-black
+     ((t (:foreground "#444444" :background "#444444"))))
+
+   `(ansi-color-bright-white
+     ((t (:foreground "white" :background "white"))))
+
+   `(ansi-color-bright-blue
+     ((t (:foreground "#8594e8" :background "#8594e8"))))
+
+   `(ansi-color-bright-cyan
+     ((t (:foreground "#70ffff" :background "#70ffff"))))
+
+   `(ansi-color-bright-green
+     ((t (:foreground "#7fddac" :background "#7fddac"))))
+
+   `(ansi-color-bright-magenta
+     ((t (:foreground "#d68bd5" :background "#d68bd5"))))
+
+   `(ansi-color-bright-red
+     ((t (:foreground "#ff767e" :background "#ff767e"))))
+
+   `(ansi-color-bright-yellow
+     ((t (:foreground "#c3af72" :background "#c3af72"))))
+
    ;; openai
 
    `(chatgpt-info
