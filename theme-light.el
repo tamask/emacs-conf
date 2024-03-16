@@ -48,6 +48,9 @@
    `(error
      ((t (:foreground ,theme-error :weight normal))))
 
+   `(success
+     ((t (:foreground ,theme-green :weight normal))))
+
    `(warning
      ((t (:foreground ,theme-warning :weight normal))))
 
